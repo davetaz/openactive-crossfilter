@@ -1,0 +1,25 @@
+{
+	"name": "openactive-crossfilter",
+	"version": "0.1.0",
+	"description": "A simple crossfilter for a given open active feed.",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/davetaz/openactive-crossfilter.git"
+	},
+	"keywords": [
+		"d3",
+		"crossfilter"
+	],
+	"author": "davetaz@theodi",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/davetaz/openactive-crossfilter/issues"
+	},
+	"homepage": "https://github.com/davetaz/openactive-crossfilter#readme",
+	"dependencies": {
+		"crossfilter2": "^1.4.7",
+		"d3": "^4.10.0",
+		"dc": "^3.1.5",
+		"jquery": ">3.0.0"
+	}
+}
