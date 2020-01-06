@@ -34,7 +34,8 @@ function renderCharts(items) {
 		.width(400)
 		.height(800)
 		.dimension(activity)
-		.group(activityGroup);
+		.group(activityGroup)
+		.xAxis().ticks(0);
 
 	var minPrice = 0;
 	var maxPrice = 0;
@@ -161,7 +162,7 @@ function renderCharts(items) {
 		.height(800)
 		.center([53.2,-1.5])
 		.zoom(7)
-		.cluster(true);
+		.cluster(false);
 
 	var minDuration = 100;
 	var maxDuration = 0;
