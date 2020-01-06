@@ -1,5 +1,6 @@
 body {
 	background-color: black;
+	color: white;
 }
 #chart4 {
 	color: white;
@@ -12,4 +13,37 @@ body {
 }
 #chart4 .axis text {
 	fill: white;
+}
+#chart3 {
+	color: white;
+}
+#chart3 .axis path {
+	stroke: white;
+}
+#chart3 .axis line {
+	stroke: white;
+}
+#chart3 .axis text {
+	fill: white;
+}
+#chart2 {
+	display: none;
+}
+#chart1 {
+	width: 400px;
+	float: left;
+}
+#map {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+}
+#costSlider {
+	display: inline-block;
+}
+#durationSlider {
+	display: inline-block;
+}
+.ui-slider .ui-slider-range {
+	background: #4682b4;
 }

@@ -10,19 +10,31 @@
 	<link type="text/css" href="node_modules/dc.leaflet/web/css/MarkerCluster.css" rel="stylesheet"/>
 	<!--<link type="text/css" href="node_modules/dc.leaflet/web/css/dc.css" rel="stylesheet"/>-->
 	<link type="text/css" href="node_modules/dc.leaflet/web/css/leaflet-legend.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="node_modules/jquery-ui-dist/jquery-ui.min.css">
+
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/jquery-ui-dist/jquery-ui.min.js"></script> 
 	<script src="node_modules/d3/build/d3.js"></script>
 	<script src="node_modules/crossfilter2/crossfilter.js"></script>
 	<script src="node_modules/dc/dc.js"></script>
 	<script src="node_modules/leaflet/dist/leaflet.js"></script>
 	<script src="node_modules/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
 	<script src="node_modules/dc.leaflet/dc.leaflet.js"></script>
+	<script src="node_modules/moment/moment.js"></script>
 </head>
 <body>
 <div id='chart1'></div>
-<div id='chart2'></div>
-<div id='chart3'></div>
-<div id='chart4'></div>
+<div id='costArea'>
+	<h2>Price</h2>
+	<span id="costLow" value="0">£0.00</span> - <span id="costHigh" value="0">£0.00</span><br/>
+	<div id="costSlider" style="width:300px;"></div>
+</div>
+<div id='durationArea'>
+	<h2>Duration</h2>
+	<span id="durationLow" value="0">00:00</span> - <span id="durationHigh" value="0">00:00</span><br/>
+	<div id="durationSlider" style="width:300px;"></div>
+</div>
+<div id='dayOfWeek'></div>
 <div id='map'></div>
 <script src="crossfilter.js"></script>
 </body>

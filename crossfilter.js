@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-	d3.json('data/newham_20200102.json', function(data) {
+	d3.json('data/everyone-active_20200106.json', function(data) {
 		items = data.items;
 		renderCharts(getData(items));
 	});
@@ -22,10 +22,10 @@ function renderCharts(items) {
 	var cf = crossfilter(items);
 	var all = cf.groupAll();
 
-	var activityChart = dc.rowChart('#chart2');
+	var activityChart = dc.rowChart('#chart1');
 
 	var activity = cf.dimension(function (d) {
-		return d.data.activity[0];
+		return d.data.activity[0].prefLabel;
 	});
 
 	var activityGroup = activity.group();
@@ -35,55 +35,57 @@ function renderCharts(items) {
 		.height(800)
 		.dimension(activity)
 		.group(activityGroup);
-	
-	var genderChart = dc.pieChart('#chart1');
 
-	var gender = cf.dimension(function (d) {
-		return d.data.genderRestriction;
-	});
-
-	var genderGroup = gender.group();
-
-	genderChart
-		.width(180)
-		.height(180)
-		.radius(80)
-		.dimension(gender)
-		.group(genderGroup);
-
-//	var priceChart = dc.rowChart('#chart3');
+	var minPrice = 0;
+	var maxPrice = 0;
+	var f = d3.format('.2f');
 
 	var price = cf.dimension(function (d) {
-		return parseFloat(d.data.offer.price);
+		thisPrice = d.data.offers[0].price;
+		if (thisPrice < minPrice) {
+			minPrice = thisPrice;
+		}
+		if (thisPrice > maxPrice) {
+			maxPrice = thisPrice;
+			$("#costHigh").text("£" + f(thisPrice));
+			$("#costHigh").val(thisPrice);
+		}
+		return thisPrice;
+	});
+	
+	$( "#costSlider" ).slider({
+		range: true,
+		min: 0,
+		max: maxPrice,
+		step:1,
+		values: [ 0, maxPrice ],
+		range: true,
+		slide: function( event, ui ) {
+			$( "#costLow" ).text("£" + f(ui.values[ 0 ]));
+			$( "#costHigh" ).text( "£" + f(ui.values[ 1 ]));
+			$( "#costLow" ).val(ui.values[ 0 ]);
+			$( "#costHigh" ).val( ui.values[ 1 ]);
+			if(document.getElementById("costLow").value != "") {
+				start = document.getElementById("costLow").value;
+			};
+			if(document.getElementById("costHigh").value != "") {
+				end = document.getElementById("costHigh").value;
+			};
+			price.filterRange([start,end]);
+			dc.redrawAll();
+			if ( (ui.values[0]+0.1 ) >= ui.values[1] ) {
+				return false;
+			}
+		}
 	});
 
-	var priceGroup = price.group();
-/*
-	priceChart
-		.width(400)
-		.height(800)
-		.ordering(function(d) { return +d.key })
-		.dimension(price)
-		.group(priceGroup);
-*/
-	var selectChart = new dc.barChart('#chart4');
-
-	selectChart 
-		.dimension(price)
-		.group(priceGroup)
-		.height(200)
-		.width(600)
-		.x(d3.scaleLinear().domain([0, 20]));
-
-	selectChart.xAxis().tickFormat(function(d) {
-		var f = d3.format('.2f');
-		return ("£" + f(d));
+	var dayOfWeek = cf.dimension(function(d) {
+		//TODO: reduceAdd, reduceRemove etc https://stackoverflow.com/questions/17524627/is-there-a-way-to-tell-crossfilter-to-treat-elements-of-array-as-separate-record
 	});
 
 	var geo = cf.dimension(function(d) {
-		if (d.data.location.geo.latitude) {
+		if (d.data.location.geo) {
 			point = d.data.location.geo.latitude + "," + d.data.location.geo.longitude;
-			console.log(point);
 			return point;
 		} else {
 			return "0,0";
@@ -98,10 +100,56 @@ function renderCharts(items) {
 		.dimension(geo)
 		.group(geoGroup)
 		.width(600)
-		.height(400)
-		.center([51.534,0.036202])
-		.zoom(13)
+		.height(800)
+		.center([53.2,-1.5])
+		.zoom(7)
 		.cluster(true);
+
+	var minDuration = 100;
+	var maxDuration = 0;
+
+	var duration = cf.dimension(function(d) {
+		dur = d.data.duration;
+		thisDuration = moment.duration(dur).asMinutes();
+		if(thisDuration < minDuration) {
+			minDuration = thisDuration;
+			$("#durationLow").text(thisDuration);
+			$("#durationLow").val(thisDuration);
+		}
+		if (thisDuration > maxDuration) {
+			maxDuration = thisDuration;
+			$("#durationHigh").text(thisDuration);
+			$("#durationHigh").val(thisDuration);
+		}
+		return thisDuration;
+	});
+	
+	$( "#durationSlider" ).slider({
+		range: true,
+		min: minDuration,
+		max: maxDuration,
+		step:1,
+		values: [ 0, maxDuration ],
+		range: true,
+		slide: function( event, ui ) {
+			$( "#durationLow" ).text(ui.values[ 0 ]);
+			$( "#durationHigh" ).text(ui.values[ 1 ]);
+			$( "#durationLow" ).val(ui.values[ 0 ]);
+			$( "#durationHigh" ).val( ui.values[ 1 ]);
+			if(document.getElementById("durationLow").value != "") {
+				start = document.getElementById("durationLow").value;
+			};
+			if(document.getElementById("durationHigh").value != "") {
+				end = document.getElementById("durationHigh").value;
+			};
+			duration.filterRange([start,end]);
+			dc.redrawAll();
+			if ( (ui.values[0]+0.1 ) >= ui.values[1] ) {
+				return false;
+			}
+		}
+	});
+
 
 	dc.renderAll();
 
