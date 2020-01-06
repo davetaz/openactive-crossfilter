@@ -1,6 +1,8 @@
-d3.json('data/newham_20200102.json', function(data) {
-	items = data.items;
-	renderCharts(getData(items));
+$( document ).ready(function() {
+	d3.json('data/newham_20200102.json', function(data) {
+		items = data.items;
+		renderCharts(getData(items));
+	});
 });
 
 function getData(items) {
@@ -77,6 +79,29 @@ function renderCharts(items) {
 		var f = d3.format('.2f');
 		return ("£" + f(d));
 	});
+
+	var geo = cf.dimension(function(d) {
+		if (d.data.location.geo.latitude) {
+			point = d.data.location.geo.latitude + "," + d.data.location.geo.longitude;
+			console.log(point);
+			return point;
+		} else {
+			return "0,0";
+		}
+	});
+
+	var geoGroup = geo.group();
+
+	var mapChart = dc_leaflet.markerChart('#map');
+
+	mapChart
+		.dimension(geo)
+		.group(geoGroup)
+		.width(600)
+		.height(400)
+		.center([51.534,0.036202])
+		.zoom(13)
+		.cluster(true);
 
 	dc.renderAll();
 
