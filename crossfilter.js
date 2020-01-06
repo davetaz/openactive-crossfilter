@@ -79,9 +79,67 @@ function renderCharts(items) {
 		}
 	});
 
+	function reduceAdd(p, v) {
+	  if (v.data.eventSchedule) {
+	  	v.data.eventSchedule.byDay.forEach (function(val, idx) {
+	     p[val] = (p[val] || 0) + 1; //increment counts
+	  	});
+	  } else {
+	  	p['unknown'] = (p['unknown'] || 0) + 1;
+	  }
+	  return p;
+	}
+
+	function reduceRemove(p, v) {
+	  if (v.data.eventSchedule) {
+	  	v.data.eventSchedule.byDay.forEach (function(val, idx) {
+	     	p[val] = (p[val] || 0) - 1; //decrement counts
+	  	});
+	  } else {
+	  	p['unknown'] = (p['unknown'] || 0) - 1;
+	  }
+	  return p;
+	}
+
+	function reduceInitial() {
+	  return {};  
+	}
+
 	var dayOfWeek = cf.dimension(function(d) {
-		//TODO: reduceAdd, reduceRemove etc https://stackoverflow.com/questions/17524627/is-there-a-way-to-tell-crossfilter-to-treat-elements-of-array-as-separate-record
+		if (d.data.eventSchedule) {
+			return d.data.eventSchedule.byDay;
+		} else {
+			return "unknown";
+		}
 	});
+
+	var dayOfWeekGroup = dayOfWeek.groupAll().reduce(reduceAdd,reduceRemove,reduceInitial).value();
+
+	dayOfWeekGroup.all = function() {
+		var newObject = [];
+		  for (var key in this) {
+		    if (this.hasOwnProperty(key) && key != "all") {
+		      newObject.push({
+		        key: key,
+		        value: this[key]
+		      });
+		    }
+		  }
+		 return newObject;
+	}
+
+	var dayOfWeekChart = dc.rowChart("#dayOfWeek");
+    dayOfWeekChart                              
+	    .renderLabel(true)
+	    .width(400)
+	    .height(200)
+	    .dimension(dayOfWeek)
+	    .group(dayOfWeekGroup)
+	    .filterHandler(function(dimension, filter){     
+	        dimension.filter(function(d) {return dayOfWeekChart.filter() != null ? d.indexOf(dayOfWeekChart.filter()) >= 0 : true;}); // perform filtering
+	        return filter; // return the actual filter value
+	       })
+	    .xAxis().ticks(0);
 
 	var geo = cf.dimension(function(d) {
 		if (d.data.location.geo) {
