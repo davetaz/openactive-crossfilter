@@ -2,6 +2,11 @@ body {
 	background-color: black;
 	color: white;
 }
+#dayOfWeek {
+	position: relative;
+	top: -10px;
+	left: -30px;
+}
 #chart4 {
 	color: white;
 }
@@ -29,14 +34,16 @@ body {
 #chart2 {
 	display: none;
 }
-#chart1 {
+#activityChart {
 	width: 400px;
-	float: left;
+	height: 400px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: relative;
+	top: -10px;
+	left: -30px;
 }
 #map {
-	position: fixed;
-	top: 10px;
-	right: 10px;
 }
 #costSlider {
 	display: inline-block;
@@ -44,6 +51,53 @@ body {
 #durationSlider {
 	display: inline-block;
 }
+#startTimeSlider {
+	display: inline-block;
+}
 .ui-slider .ui-slider-range {
 	background: #4682b4;
+}
+#dc-data-grid {
+	display: block;
+	margin-top: 10px;
+	width: 100%;
+}
+.dc-grid-section {
+	display:none;
+}
+.dc-grid-item {
+	margin-left: auto;
+	margin-right: auto;
+	width: 95%;
+	border: 1px solid white;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+.dc-grid-item .activity {
+	display: none;
+}
+.dc-grid-item .upcoming item {
+	display: block;
+}
+panel {
+	display: inline-block;
+	vertical-align: middle;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+#first {
+	width: 350px;
+}
+#second {
+	width: 400px;
+}
+#search input {
+	font-size: 2em;
+    width: 90%;
+}
+.ui-slider {
+	margin-top: 10px;
+	margin-left: 10px;
 }

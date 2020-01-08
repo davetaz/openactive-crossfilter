@@ -23,22 +23,42 @@
 	<script src="node_modules/moment/moment.js"></script>
 </head>
 <body>
-<div id='chart1'></div>
-<div id='costArea'>
-	<h2>Price</h2>
-	<span id="costLow" value="0">£0.00</span> - <span id="costHigh" value="0">£0.00</span><br/>
-	<div id="costSlider" style="width:300px;"></div>
-</div>
-<div id='durationArea'>
-	<h2>Duration</h2>
-	<span id="durationLow" value="0">00:00</span> - <span id="durationHigh" value="0">00:00</span><br/>
-	<div id="durationSlider" style="width:300px;"></div>
-</div>
-<div id="dayOfWeekArea">
-	<h2>Day of Week</h2>
-	<div id='dayOfWeek'></div>
-</div>
-<div id='map'></div>
+<panel id="first">
+	<div id='searchArea'>
+		<h2>Search</h2>
+		<p>Search for activity, category, location etc.</p>
+		<div id='search'></div>
+	</div>
+	<div id='activityArea'>
+		<h2>Activity Type</h2>
+		<div id='activityChart'></div>
+	</div>
+</panel>
+<panel id="second">
+	<div id='costArea'>
+		<h2>Price</h2>
+		<span id="costLow" value="0">£0.00</span> - <span id="costHigh" value="0">£0.00</span><br/>
+		<div id="costSlider" style="width:300px;"></div>
+	</div>
+	<div id='durationArea'>
+		<h2>Duration</h2>
+		<span id="durationLow" value="0">00:00</span> - <span id="durationHigh" value="0">00:00</span><br/>
+		<div id="durationSlider" style="width:300px;"></div>
+	</div>
+	<div id='startTimeArea'>
+		<h2>Start Time</h2>
+		<span id="startTimeLow" value="0">00:00</span> - <span id="startTimeHigh" value="0">23:59</span><br/>
+		<div id="startTimeSlider" style="width:300px;"></div>
+	</div>
+	<div id="dayOfWeekArea">
+		<h2>Day of Week</h2>
+		<div id='dayOfWeek'></div>
+	</div>
+</panel>
+<panel id="third">
+	<div id='map'></div>
+</panel>
+<div id="dc-data-grid"></div>
 <script src="crossfilter.js"></script>
 </body>
 </html>
