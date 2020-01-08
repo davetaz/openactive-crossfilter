@@ -1,6 +1,7 @@
+//Create a strong formatter
+var f = d3.format('.2f');
 
-//var tpl = _.template("<h2 title='MEP from <%= country %> in <%= eugroup %>'> <%= first_name %> <%= last_name %></h2><img class='lazy-load' dsrc='blank.gif' data-original='http://www.europarl.europa.eu/mepphoto/<%= epid %>.jpg' alt='<%= last_name %>, <%= first_name %> member of <%= eugroup %>' title='MEP from <%= country %> in <%= eugroup %>' width=170 height=216 />");
-
+//When all dependancies have loaded, load the data. We'll do this locally to save a remote call.
 $( document ).ready(function() {
 	d3.json('data/data.json', function(data) {
 		items = data.items;
@@ -8,48 +9,23 @@ $( document ).ready(function() {
 	});
 });
 
-function getData(items) {
-	output = [];
-
-	$.each(items, function(index,value) {
-		if (value.state != "deleted") {
-			value.data.subEvent.forEach(function(item,idx) {
-				total = 0;
-				start = item.startDate;
-				hours = moment(start).format("H");
-				minutes = moment(start).format("m");
-				total = Number(60 * hours) + Number(minutes);
-				item.startTime = total;
-			});
-			output.push(value);
-		}
-	});
-	return output;
-}
-
+//Once the data is loaded, render the page
 function renderCharts(items) {
 
+	//Create the cross filter
 	var cf = crossfilter(items);
 	var all = cf.groupAll();
 
-	function getCategoriesString(cats) {
-		categories = "";
-		cats.forEach (function(val, idx) {
-			categories += val + " ";
-		});
-		return categories;
-	}
-
+	//Add search box
 	var searchText = cf.dimension(function(d) {
-		return d.data.activity[0].prefLabel + " " + d.data.name + " " + d.data.description + " " + d.data.location.name + " " + d.data.location.address.addressLocality + " " + d.data.location.address.addressRegion + " " + getCategoriesString(d.data.category);
+		return getSearchText(d);
 	});
 
 	var search = new dc.textFilterWidget("#search");
 
-	search
-        .dimension(searchText);
+	search.dimension(searchText);
 
-
+	//Add activity chart (assume first one only)
 	var activityChart = dc.rowChart('#activityChart');
 
 	var activity = cf.dimension(function (d) {
@@ -58,17 +34,43 @@ function renderCharts(items) {
 
 	var activityGroup = activity.group();
 
+	//Here is the handler for the array of categories
+	var category = cf.dimension(function (d) {
+		return d.data.category;
+	});
+
+	var categoryGroup = category.groupAll().reduce(reduceAddCategories,reduceRemoveCategories,reduceInitial).value();
+
+	categoryGroup.all = function() {
+		var newObject = [];
+		  for (var key in this) {
+		    if (this.hasOwnProperty(key) && key != "all") {
+		      newObject.push({
+		        key: key,
+		        value: this[key]
+		      });
+		    }
+		  }
+		return newObject;
+	}
+
 	activityChart
 		.width(400)
 		.height(800)
 		.dimension(activity)
 		.group(activityGroup)
+		//.dimension(category)
+		//.group(categoryGroup)
+		//.filterHandler(function(dimension, filter){     
+	    //    dimension.filter(function(d) {return activityChart.filter() != null ? d.indexOf(activityChart.filter()) >= 0 : true;}); // perform filtering
+	    //    return filter; // return the actual filter value
+	    //   })
 		.xAxis().ticks(0);
 
+	//Add cost slider
 	var minPrice = 0;
 	var maxPrice = 0;
-	var f = d3.format('.2f');
-
+	
 	var price = cf.dimension(function (d) {
 		thisPrice = d.data.offers[0].price;
 		if (thisPrice < minPrice) {
@@ -108,46 +110,7 @@ function renderCharts(items) {
 		}
 	});
 
-	function reduceAdd(p, v) {
-	  if (v.data.eventSchedule) {
-	  	v.data.eventSchedule.byDay.forEach (function(val, idx) {
-	     p[val] = (p[val] || 0) + 1; //increment counts
-	  	});
-	  } else {
-	  	fillDays(v.data.subEvent).forEach (function(val, idx) {
-	  		p[val] = (p[val] || 0) + 1; //decrement counts
-	  	});
-	  }
-	  return p;
-	}
-
-	function reduceRemove(p, v) {
-	  if (v.data.eventSchedule) {
-	  	v.data.eventSchedule.byDay.forEach (function(val, idx) {
-	     	p[val] = (p[val] || 0) - 1; //decrement counts
-	  	});
-	  } else {
-	  	fillDays(v.data.subEvent).forEach (function(val, idx) {
-	  		p[val] = (p[val] || 0) - 1; //decrement counts
-	  	});
-	  }
-	  return p;
-	}
-
-	function reduceInitial() {
-	  return {};  
-	}
-
-	function fillDays(events) {
-		var ret = [];
-		events.forEach (function(val,idx) {
-			start = val.startDate;
-			formatted = moment(start).format("dddd");
-			ret.push('http://schema.org/' + formatted);
-		});
-		return ret;
-	}
-
+	// Dats of week, need to move the cleaning to the pre-processor
 	var dayOfWeek = cf.dimension(function(d) {
 		if (d.data.eventSchedule) {
 			return d.data.eventSchedule.byDay;
@@ -156,7 +119,9 @@ function renderCharts(items) {
 		}
 	});
 
-	var dayOfWeekGroup = dayOfWeek.groupAll().reduce(reduceAdd,reduceRemove,reduceInitial).value();
+	//var dayOfWeekGroup = dayOfWeek.groupAll();
+
+	var dayOfWeekGroup = dayOfWeek.groupAll().reduce(reduceAddDays,reduceRemoveDays,reduceInitial).value();
 
 	dayOfWeekGroup.all = function() {
 		var newObject = [];
@@ -171,7 +136,7 @@ function renderCharts(items) {
 		 return newObject;
 	}
 
-	var dayOfWeekChart = dc.rowChart("#dayOfWeek");
+	var dayOfWeekChart = dc.rowChart("#dayOfWeekChart");
     dayOfWeekChart                              
 	    .renderLabel(true)
 	    .width(400)
@@ -186,12 +151,14 @@ function renderCharts(items) {
 
 	var locations = {};
 
+	// The map
 	var geo = cf.dimension(function(d) {
 		if (d.data.location.geo) {
 			point = d.data.location.geo.latitude + "," + d.data.location.geo.longitude;
 			locations[point] = d.data.location;
 			return point;
 		} else {
+			// TODO fix to geocode in the pre-processor?
 			return "0,0";
 		}
 	});
@@ -217,23 +184,10 @@ function renderCharts(items) {
 			}
 		});
 
-	function timeConvert(num) {
-		hours = (num / 60);
-		rhours = Math.floor(hours);
-		minutes = (hours - rhours) * 60;
-		rminutes = Math.round(minutes);
-		return rhours + "h" + rminutes+"m";
-	}
 
 	var startTime = cf.dimension(function(d) {
 		return d.data.subEvent[0].startTime;
 	});
-
-	function minutesToTime(raw) {
-		hours = Math.floor(raw / 60);
-		minutes = Number(raw) - Number(60 * hours);
-		return moment("2010-10-10 " + hours + ":" + minutes + ":00").format("HH:mm");
-	}
 
 	$( "#startTimeSlider" ).slider({
 		range: true,
@@ -261,6 +215,7 @@ function renderCharts(items) {
 		}
 	});
 
+	// Duration slider
 	var minDuration = 100;
 	var maxDuration = 0;
 
@@ -306,34 +261,7 @@ function renderCharts(items) {
 		}
 	});
 
-	function getPriceRange(offers) {
-		var minPrice = 1000;
-	    var maxPrice = 0;
-	    offers.forEach (function(val,idx) {
-	    	if (val.price < minPrice) {
-	    		minPrice = val.price;
-	    	}
-	    	if (val.price > maxPrice) {
-	    		maxPrice = val.price;
-	    	}
-	    });
-	    if (minPrice == maxPrice) {
-	    	return "£" + f(minPrice);
-	    } else {
-	    	return "£" + f(minPrice) + " - £" + f(maxPrice);
-	    }
-	}
-
-	function getSubEvents(events) {
-		var ret = "";
-		events.forEach (function(val,idx) {
-			start = val.startDate;
-			formatted = moment(start).format("dddd, MMMM Do YYYY @ HH:mm");
-			ret += '<item>' + formatted + '</item>';
-		});
-		return ret;
-	}
-
+	// The cards in the data grid
 	var dataGrid = dc.dataGrid("#dc-data-grid");
 
 	dataGrid
