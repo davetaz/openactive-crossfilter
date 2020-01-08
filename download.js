@@ -1,7 +1,26 @@
+/*
+ * download.js
+ * Harvest n pages of openactive data from a provider.
+ * By detault 10 pages of data are downloaded from everyone active
+ * Usage: 
+ *    node download.js <sessions url> <number of pages to fetch>
+ */
+
 const http = require('http');
 const fs = require('fs');
 
+var myArgs = process.argv.slice(2);
+
 let url = "http://everyoneactivelive-openactive.azurewebsites.net/api/sessions";
+let maxCount = 5;
+
+if (myArgs[0]) {
+	url = myArgs[0];
+}
+
+if (myArgs[1]) {
+	maxCount = myArgs[1];
+}
 
 items = [];
 
@@ -24,7 +43,7 @@ function fetchDataFromUrl(url) {
             items.push(json.items);
             //console.log(items[url][0]);
             count = count + 1;
-            if (count < 4) {
+            if (count < maxCount) {
     			fetchDataFromUrl(json.next);
     		} else {
     			processItems(items);
