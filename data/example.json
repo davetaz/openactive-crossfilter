@@ -1,0 +1,528 @@
+{
+    "items": [
+    	{
+            "state": "updated",
+            "kind": "session",
+            "id": "0794K3211420219",
+            "modified": 287833080,
+            "data": {
+                "@context": "https://www.openactive.io/ns/oa.jsonld",
+                "id": "http://everyoneactivelive-openactive.azurewebsites.net/api/sessions/0794K3211420219",
+                "identifier": "0794K3211420219",
+                "activity": [
+                    {
+                        "type": "Concept",
+                        "prefLabel": "Bowls"
+                    }
+                ],
+                "category": [
+                    "Bowls Activities",
+                    "Leagues"
+                ],
+                "name": "Bowls Leagues",
+                "description": "Ladies triples Thurs 11.30. Only book if scheduled to play.",
+                "genderRestriction": "http://openactive.io/ns#None",
+                "ageRange": {
+                    "type": "QuantitativeValue",
+                    "name": "All Ages",
+                    "minValue": 0
+                },
+                "image": {
+                    "type": "ImageObject",
+                    "url": "https://s3-eu-west-2.amazonaws.com/prod-everyoneactive-wp/wp-content/uploads/2017/10/26092236/Ea-Image2.jpg"
+                },
+                "url": "https://profile.everyoneactive.com/booking?Site=0079&Activities=0794K3211420219&Culture=en-GB",
+                "location": {
+                    "type": "Place",
+                    "url": "https://www.everyoneactive.com/centre/Plymouth-Life-Centre",
+                    "name": "Plymouth Life Centre - Swim",
+                    "identifier": "0079",
+                    "address": {
+                        "type": "PostalAddress",
+                        "streetAddress": "Mayflower Drive",
+                        "addressLocality": "Plymouth",
+                        "postalCode": "PL2 3DG",
+                        "addressCountry": "GB"
+                    },
+                    "telephone": "01752 606900",
+                    "geo": {
+                        "type": "GeoCoordinates",
+                        "latitude": 50.3867280918278,
+                        "longitude": -4.15290647116398
+                    }
+                },
+                "subEvent": [
+                    {
+                        "type": "Event",
+                        "startDate": "2020-01-09T11:30:00Z",
+                        "endDate": "2020-01-09T13:29:59Z",
+                        "remainingAttendeeCapacity": 6,
+                        "maximumAttendeeCapacity": 6,
+                        "identifier": 790927752
+                    }
+                ],
+                "offers": [
+                    {
+                        "type": "Offer",
+                        "identifier": "OX-AD",
+                        "name": "Oxygen - Adult",
+                        "description": "Bowls - General Session",
+                        "price": 5.95,
+                        "priceCurrency": "GBP",
+                        "genderRestriction": "http://openactive.io/ns#None"
+                    },
+                    {
+                        "type": "Offer",
+                        "identifier": "OX-JNR",
+                        "name": "Oxygen - Junior",
+                        "description": "Bowls - General Session",
+                        "price": 2.6,
+                        "priceCurrency": "GBP",
+                        "ageRange": {
+                            "type": "QuantitativeValue",
+                            "maxValue": 13
+                        },
+                        "genderRestriction": "http://openactive.io/ns#None"
+                    },
+                    {
+                        "type": "Offer",
+                        "identifier": "OX-SNR",
+                        "name": "Oxygen - Senior",
+                        "description": "Bowls - General Session",
+                        "price": 5.95,
+                        "priceCurrency": "GBP",
+                        "ageRange": {
+                            "type": "QuantitativeValue",
+                            "minValue": 50
+                        },
+                        "genderRestriction": "http://openactive.io/ns#None"
+                    }
+                ],
+                "type": "Event",
+                "duration": "PT2H"
+            }
+        },
+        {
+            "state": "updated",
+            "kind": "session",
+            "id": "2205K9709200319",
+            "modified": 288041743,
+            "data": {
+                "@context": "https://www.openactive.io/ns/oa.jsonld",
+                "id": "http://everyoneactivelive-openactive.azurewebsites.net/api/sessions/2205K9709200319",
+                "identifier": "2205K9709200319",
+                "activity": [
+                    {
+                        "type": "Concept",
+                        "id": "http://openactive.io/activity-list/#f2ea7405-6098-4378-b0fe-4e398a659fc4",
+                        "prefLabel": "Tennis",
+                        "inScheme": "http://openactive.io/activity-list/"
+                    }
+                ],
+                "category": [
+                    "Activities",
+                    "Racket Sports",
+                    "Tennis Activities"
+                ],
+                "name": "Tennis Cardio",
+                "description": "High Energy Cardio workout to music ",
+                "genderRestriction": "http://openactive.io/ns#None",
+                "ageRange": {
+                    "type": "QuantitativeValue",
+                    "name": "Ages 16+",
+                    "minValue": 16
+                },
+                "image": {
+                    "type": "ImageObject",
+                    "url": "https://s3-eu-west-2.amazonaws.com/prod-everyoneactive-wp/wp-content/uploads/2017/10/26092236/Ea-Image2.jpg"
+                },
+                "url": "https://profile.everyoneactive.com/booking?Site=0220&Activities=2205K9709200319&Culture=en-GB",
+                "location": {
+                    "type": "Place",
+                    "url": "https://https://www.everyoneactive.com/centre/blackbrook-leisure-centre-spa/",
+                    "name": "Blackbrook Leisure Centre",
+                    "identifier": "0220",
+                    "address": {
+                        "type": "PostalAddress",
+                        "streetAddress": "Blackbrook Way",
+                        "addressLocality": "Taunton",
+                        "addressRegion": "Somerset",
+                        "postalCode": "TA1 2RW",
+                        "addressCountry": "GB"
+                    },
+                    "geo": {
+                        "type": "GeoCoordinates",
+                        "latitude": 51.0129,
+                        "longitude": -3.07004
+                    }
+                },
+                "eventSchedule": {
+                    "type": "Schedule",
+                    "byDay": [
+                        "http://schema.org/Thursday"
+                    ]
+                },
+                "subEvent": [
+                    {
+                        "type": "Event",
+                        "startDate": "2020-01-09T09:20:00Z",
+                        "endDate": "2020-01-09T10:19:59Z",
+                        "remainingAttendeeCapacity": 10,
+                        "maximumAttendeeCapacity": 10,
+                        "identifier": 45012196
+                    },
+                    {
+                        "type": "Event",
+                        "startDate": "2020-01-16T09:20:00Z",
+                        "endDate": "2020-01-16T10:19:59Z",
+                        "remainingAttendeeCapacity": 10,
+                        "maximumAttendeeCapacity": 10,
+                        "identifier": 45012197
+                    }
+                ],
+                "offers": [
+                    {
+                        "type": "Offer",
+                        "identifier": "OX-AD",
+                        "name": "Oxygen - Adult",
+                        "description": "Cardio Tennis - Ss",
+                        "price": 7,
+                        "priceCurrency": "GBP",
+                        "genderRestriction": "http://openactive.io/ns#None"
+                    },
+                    {
+                        "type": "Offer",
+                        "identifier": "OX-SNR",
+                        "name": "Oxygen - Senior",
+                        "description": "Cardio Tennis - Ss",
+                        "price": 7,
+                        "priceCurrency": "GBP",
+                        "ageRange": {
+                            "type": "QuantitativeValue",
+                            "minValue": 50
+                        },
+                        "genderRestriction": "http://openactive.io/ns#None"
+                    }
+                ],
+                "type": "Event",
+                "duration": "PT1H"
+            }
+        },
+        {
+            "state": "updated",
+            "kind": "session",
+            "id": "2054CRP12000620",
+            "modified": 288041744,
+            "data": {
+                "@context": "https://www.openactive.io/ns/oa.jsonld",
+                "id": "http://everyoneactivelive-openactive.azurewebsites.net/api/sessions/2054CRP12000620",
+                "identifier": "2054CRP12000620",
+                "activity": [
+                    {
+                        "type": "Concept",
+                        "id": "http://openactive.io/activity-list/#2c2b9be5-9491-4958-bee8-70ced347d384",
+                        "prefLabel": "Rpm™",
+                        "inScheme": "http://openactive.io/activity-list/"
+                    }
+                ],
+                "category": [
+                    "Group Exercise Classes",
+                    "Calorie Killers",
+                    "Group Exercise - Virtual"
+                ],
+                "name": "Virtual RPM",
+                "description": "This virtual cycling class allows you to choose how hard you want to push yourself, while still keeping up with the instructor who takes you and the rest of the class through hill climbs, sprints and flat rides. Virtual RPM is fantastic for improving cardio fitness, as well as burning fat and calories, while the low-impact nature of the exercise will also help you avoid injury. Virtual classes are great if you just want to give the class a trial run. Theyre played on big screens with music and  are led by instructors who have actually developed the classes.",
+                "attendeeInstructions": "RPM is an indoor cycling class set to the rythm of motivating music. It burns lots of calories and gets you fit!",
+                "genderRestriction": "http://openactive.io/ns#None",
+                "ageRange": {
+                    "type": "QuantitativeValue",
+                    "name": "Ages 16+",
+                    "minValue": 16
+                },
+                "image": {
+                    "type": "ImageObject",
+                    "url": "https://s3-eu-west-2.amazonaws.com/prod-everyoneactive-wp/wp-content/uploads/2017/10/26092236/Ea-Image2.jpg"
+                },
+                "url": "https://profile.everyoneactive.com/booking?Site=0205&Activities=2054CRP12000620&Culture=en-GB",
+                "location": {
+                    "type": "Place",
+                    "url": "https://www.everyoneactive.com/centre/meadowside-leisure-centre/",
+                    "name": "Meadowside Leisure Centre",
+                    "identifier": "0205",
+                    "address": {
+                        "type": "PostalAddress",
+                        "streetAddress": "High Street",
+                        "addressLocality": "Burton-on-Trent",
+                        "addressRegion": "Staffordshire",
+                        "postalCode": "DE14 1TL",
+                        "addressCountry": "GB"
+                    },
+                    "telephone": "01283 372960",
+                    "geo": {
+                        "type": "GeoCoordinates",
+                        "latitude": 52.80489,
+                        "longitude": -1.62788
+                    }
+                },
+                "eventSchedule": {
+                    "type": "Schedule",
+                    "byDay": [
+                        "http://schema.org/Thursday"
+                    ]
+                },
+                "subEvent": [
+                    {
+                        "type": "Event",
+                        "startDate": "2020-01-09T12:00:00Z",
+                        "endDate": "2020-01-09T12:44:59Z",
+                        "remainingAttendeeCapacity": 20,
+                        "maximumAttendeeCapacity": 20,
+                        "identifier": 2050057433
+                    },
+                    {
+                        "type": "Event",
+                        "startDate": "2020-01-16T12:00:00Z",
+                        "endDate": "2020-01-16T12:44:59Z",
+                        "remainingAttendeeCapacity": 20,
+                        "maximumAttendeeCapacity": 20,
+                        "identifier": 2050057434
+                    }
+                ],
+                "offers": [
+                    {
+                        "type": "Offer",
+                        "identifier": "OX-AD",
+                        "name": "Oxygen - Adult",
+                        "description": "Grp Ex - Virtual Rpm",
+                        "price": 3,
+                        "priceCurrency": "GBP",
+                        "genderRestriction": "http://openactive.io/ns#None"
+                    },
+                    {
+                        "type": "Offer",
+                        "identifier": "OX-SNR",
+                        "name": "Oxygen - Senior",
+                        "description": "Grp Ex - Virtual Rpm",
+                        "price": 3,
+                        "priceCurrency": "GBP",
+                        "ageRange": {
+                            "type": "QuantitativeValue",
+                            "minValue": 50
+                        },
+                        "genderRestriction": "http://openactive.io/ns#None"
+                    }
+                ],
+                "type": "Event",
+                "duration": "PT45M"
+            }
+        },
+        {
+            "state": "updated",
+            "kind": "session",
+            "id": "1425CPI12500219",
+            "modified": 288078028,
+            "data": {
+                "@context": "https://www.openactive.io/ns/oa.jsonld",
+                "id": "http://everyoneactivelive-openactive.azurewebsites.net/api/sessions/1425CPI12500219",
+                "identifier": "1425CPI12500219",
+                "activity": [
+                    {
+                        "type": "Concept",
+                        "id": "http://openactive.io/activity-list/#3a6b1c08-7aa6-48d4-9690-dca9e0133057",
+                        "prefLabel": "Pilates",
+                        "inScheme": "http://openactive.io/activity-list/"
+                    }
+                ],
+                "category": [
+                    "Group Exercise Classes",
+                    "Unwind & Re-energise",
+                    "Group Exercise 16+ Yrs"
+                ],
+                "name": "Pilates",
+                "description": "These sessions are designed to concentrate on slow and measured movements in order to create lean and stronger muscles around your torso. A gentle but highly effective session for improving posture, flexibility and preventing injury.",
+                "genderRestriction": "http://openactive.io/ns#None",
+                "ageRange": {
+                    "type": "QuantitativeValue",
+                    "name": "Ages 16+",
+                    "minValue": 16
+                },
+                "image": {
+                    "type": "ImageObject",
+                    "url": "https://s3-eu-west-2.amazonaws.com/prod-everyoneactive-wp/wp-content/uploads/2017/10/26092236/Ea-Image2.jpg"
+                },
+                "url": "https://profile.everyoneactive.com/booking?Site=0142&Activities=1425CPI12500219&Culture=en-GB",
+                "location": {
+                    "type": "Place",
+                    "url": "https://www.everyoneactive.com/centre/Westgate-Leisure-Centre",
+                    "name": "Westgate Leisure Centre",
+                    "identifier": "0142",
+                    "address": {
+                        "type": "PostalAddress",
+                        "streetAddress": "Via Ravenna",
+                        "addressLocality": "Chichester",
+                        "addressRegion": "West Sussex",
+                        "postalCode": "PO19 1RJ",
+                        "addressCountry": "GB"
+                    },
+                    "telephone": "01243 785651",
+                    "geo": {
+                        "type": "GeoCoordinates",
+                        "latitude": 50.8332742524953,
+                        "longitude": -0.786547100772054
+                    }
+                },
+                "subEvent": [
+                    {
+                        "type": "Event",
+                        "startDate": "2020-01-10T12:50:00Z",
+                        "endDate": "2020-01-10T13:49:59Z",
+                        "remainingAttendeeCapacity": 0,
+                        "maximumAttendeeCapacity": 30,
+                        "identifier": 1420258623
+                    },
+                    {
+                        "type": "Event",
+                        "startDate": "2020-01-17T12:50:00Z",
+                        "endDate": "2020-01-17T13:49:59Z",
+                        "remainingAttendeeCapacity": 30,
+                        "maximumAttendeeCapacity": 30,
+                        "identifier": 1420258624
+                    }
+                ],
+                "offers": [
+                    {
+                        "type": "Offer",
+                        "identifier": "OX-AD",
+                        "name": "Oxygen - Adult",
+                        "description": "Grp Ex - Pilates",
+                        "price": 7.9,
+                        "priceCurrency": "GBP",
+                        "genderRestriction": "http://openactive.io/ns#None"
+                    },
+                    {
+                        "type": "Offer",
+                        "identifier": "OX-SNR",
+                        "name": "Oxygen - Senior",
+                        "description": "Grp Ex - Pilates",
+                        "price": 7.9,
+                        "priceCurrency": "GBP",
+                        "ageRange": {
+                            "type": "QuantitativeValue",
+                            "minValue": 50
+                        },
+                        "genderRestriction": "http://openactive.io/ns#None"
+                    }
+                ],
+                "type": "Event",
+                "duration": "PT1H"
+            }
+        },
+        {
+            "state": "updated",
+            "kind": "session",
+            "id": "1235CRP20000417",
+            "modified": 288078031,
+            "data": {
+                "@context": "https://www.openactive.io/ns/oa.jsonld",
+                "id": "http://everyoneactivelive-openactive.azurewebsites.net/api/sessions/1235CRP20000417",
+                "identifier": "1235CRP20000417",
+                "activity": [
+                    {
+                        "type": "Concept",
+                        "id": "http://openactive.io/activity-list/#2c2b9be5-9491-4958-bee8-70ced347d384",
+                        "prefLabel": "Rpm™",
+                        "inScheme": "http://openactive.io/activity-list/"
+                    }
+                ],
+                "category": [
+                    "Group Exercise Classes",
+                    "Calorie Killers",
+                    "Group Exercise - Virtual"
+                ],
+                "name": "Virtual RPM",
+                "description": "This virtual cycling class allows you to choose how hard you want to push yourself, while still keeping up with the instructor who takes you and the rest of the class through hill climbs, sprints and flat rides. Virtual RPM is fantastic for improving cardio fitness, as well as burning fat and calories, while the low-impact nature of the exercise will also help you avoid injury. Virtual classes are great if you just want to give the class a trial run. Theyre played on big screens with music and  are led by instructors who have actually developed the classes.",
+                "attendeeInstructions": " is the indoor cycling workout where you ride to the rhythm of powerful music. Take on the terrain with your inspiring team coach who leads the pack through hills, flats, mountain peaks, time trials, and interval training. Discover your athlete within.",
+                "genderRestriction": "http://openactive.io/ns#None",
+                "ageRange": {
+                    "type": "QuantitativeValue",
+                    "name": "Ages 16+",
+                    "minValue": 16
+                },
+                "image": {
+                    "type": "ImageObject",
+                    "url": "https://s3-eu-west-2.amazonaws.com/prod-everyoneactive-wp/wp-content/uploads/2017/10/26092236/Ea-Image2.jpg"
+                },
+                "url": "https://profile.everyoneactive.com/booking?Site=0123&Activities=1235CRP20000417&Culture=en-GB",
+                "location": {
+                    "type": "Place",
+                    "url": "https://www.everyoneactive.com/centre/silksworth-tennis-centre",
+                    "name": "Silksworth Tennis Centre",
+                    "identifier": "0123",
+                    "address": {
+                        "type": "PostalAddress",
+                        "streetAddress": "Silksworth Lane",
+                        "addressRegion": "Sunderland",
+                        "postalCode": "SR3 1PD",
+                        "addressCountry": "GB"
+                    },
+                    "telephone": "03330 050152",
+                    "geo": {
+                        "type": "GeoCoordinates",
+                        "latitude": 54.8826733282092,
+                        "longitude": -1.40882931779094
+                    }
+                },
+                "eventSchedule": {
+                    "type": "Schedule",
+                    "byDay": [
+                        "http://schema.org/Friday"
+                    ]
+                },
+                "subEvent": [
+                    {
+                        "type": "Event",
+                        "startDate": "2020-01-10T20:00:00Z",
+                        "endDate": "2020-01-10T20:29:59Z",
+                        "remainingAttendeeCapacity": 14,
+                        "maximumAttendeeCapacity": 14,
+                        "identifier": 1230255805
+                    },
+                    {
+                        "type": "Event",
+                        "startDate": "2020-01-17T20:00:00Z",
+                        "endDate": "2020-01-17T20:29:59Z",
+                        "remainingAttendeeCapacity": 14,
+                        "maximumAttendeeCapacity": 14,
+                        "identifier": 1230256737
+                    }
+                ],
+                "offers": [
+                    {
+                        "type": "Offer",
+                        "identifier": "OX-AD",
+                        "name": "Oxygen - Adult",
+                        "description": "Grp Ex - Grp Cycle Virtua",
+                        "price": 3,
+                        "priceCurrency": "GBP",
+                        "genderRestriction": "http://openactive.io/ns#None"
+                    },
+                    {
+                        "type": "Offer",
+                        "identifier": "OX-SNR",
+                        "name": "Oxygen - Senior",
+                        "description": "Grp Ex - Grp Cycle Virtua",
+                        "price": 3,
+                        "priceCurrency": "GBP",
+                        "ageRange": {
+                            "type": "QuantitativeValue",
+                            "minValue": 50
+                        },
+                        "genderRestriction": "http://openactive.io/ns#None"
+                    }
+                ],
+                "type": "Event",
+                "duration": "PT30M"
+            }
+        }
+    ]
+}
