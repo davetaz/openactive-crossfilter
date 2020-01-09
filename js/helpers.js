@@ -1,3 +1,6 @@
+//Create a strong formatter
+var currency = d3.format('.2f');
+
 //Process and tidy the data. Also create new data points as required. 
 //All preprocessing should be done here (or in the harvester)
 function getData(items) {
@@ -116,9 +119,9 @@ function getPriceRange(offers) {
 		}
 	});
 	if (minPrice == maxPrice) {
-	  	return "£" + f(minPrice);
+	  	return "£" + currency(minPrice);
 	} else {
-		return "£" + f(minPrice) + " - £" + f(maxPrice);
+		return "£" + currency(minPrice) + " - £" + currency(maxPrice);
    }
 }
 

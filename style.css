@@ -49,6 +49,10 @@ panel {
 	background: #4682b4;
 }
 
+.dc-chart .axis {
+  display: none;
+}
+
 #dc-data-grid {
 	display: block;
 	margin-top: 10px;
