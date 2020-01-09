@@ -3,7 +3,7 @@ var f = d3.format('.2f');
 
 //When all dependancies have loaded, load the data. We'll do this locally to save a remote call.
 $( document ).ready(function() {
-	d3.json('data/data.json', function(data) {
+	d3.json('data/example.json', function(data) {
 		items = data.items;
 		renderCharts(getData(items));
 	});
