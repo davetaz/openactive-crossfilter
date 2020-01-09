@@ -75,7 +75,7 @@ function renderCharts(items) {
 		}
 		if (thisPrice > maxPrice) {
 			maxPrice = thisPrice;
-			$("#costHigh").text("£" + f(thisPrice));
+			$("#costHigh").text("£" + currency(thisPrice));
 			$("#costHigh").val(thisPrice);
 		}
 		return thisPrice;
@@ -89,8 +89,8 @@ function renderCharts(items) {
 		values: [ 0, maxPrice ],
 		range: true,
 		slide: function( event, ui ) {
-			$( "#costLow" ).text("£" + f(ui.values[ 0 ]));
-			$( "#costHigh" ).text( "£" + f(ui.values[ 1 ]));
+			$( "#costLow" ).text("£" + currency(ui.values[ 0 ]));
+			$( "#costHigh" ).text( "£" + currency(ui.values[ 1 ]));
 			$( "#costLow" ).val(ui.values[ 0 ]);
 			$( "#costHigh" ).val( ui.values[ 1 ]);
 			if(document.getElementById("costLow").value != "") {
