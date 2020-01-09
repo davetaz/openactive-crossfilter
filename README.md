@@ -22,7 +22,6 @@ To do this:
 1. cd data
 2. node download.js <sessions url> <number of pages to download>
 
-
 # Viewing in a browser
 
 *Note* Double clicking index.html and opening this in a web browser will not work. The content must be hosted via a web server. There are many ways to simply launch a web server from the root directory including via node, python, php etc. Just search the web for "<operating system> <language you like> command line web server". 

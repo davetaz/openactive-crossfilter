@@ -9,12 +9,6 @@
 const http = require('http');
 const fs = require('fs');
 
-var dir = './data';
-
-if (!fs.existsSync(dir)){
-    fs.mkdirSync(dir);
-}
-
 var myArgs = process.argv.slice(2);
 
 let url = "http://everyoneactivelive-openactive.azurewebsites.net/api/sessions";
