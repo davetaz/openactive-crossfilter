@@ -23,8 +23,6 @@ function renderCharts(items) {
 	search.dimension(searchText);
 
 	//Add activity chart (assume first one only)
-	var activityChart = dc.rowChart('#activityChart');
-
 	var activity = cf.dimension(function (d) {
 		return d.data.activity[0].prefLabel;
 	});
@@ -50,6 +48,8 @@ function renderCharts(items) {
 		  }
 		return newObject;
 	}
+
+	var activityChart = dc.rowChart('#activityChart');
 
 	activityChart
 		.width(400)

@@ -3,7 +3,7 @@ var currency = d3.format('.2f');
 
 //Process and tidy the data. Also create new data points as required. 
 //All preprocessing should be done here (or in the harvester)
-function getData(items) {
+function preprocess(items) {
 	output = [];
 
 	$.each(items, function(index,value) {

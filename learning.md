@@ -21,19 +21,28 @@ Boiler plate HTML, Javascript and CSS already built!
 
 By the end of this stage we have the HTML and Layout for a card. 
 
+https://codepen.io/davetaz/pen/xxbWrxr
+
 ## Step 2 - Create the d3 data grid
 
 Use the HTML and Javascript from above to populate the data grid with all 5 items.
 
+https://codepen.io/davetaz/pen/OJPvgOK
+
 ## Step 3 - Create the activity row chart
+
+https://codepen.io/davetaz/pen/ZEYxyxK
 
 ## Step 4 - Create a line chart of the duration
 
-TODO: Make a function to getDuration from the object.
+https://codepen.io/davetaz/pen/eYmMRjE
+
+Maybe add duration to your cards??? 
 
 ## Step 4 - Create the search box
 
-TODO: Make a generic function that takes an array of variables to add to the search string
+https://codepen.io/davetaz/pen/GRgxvYN
+
 
 ## Step 5 - Create the map
 
