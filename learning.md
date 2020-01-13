@@ -21,7 +21,7 @@ Boiler plate HTML, Javascript and CSS already built!
 
 By the end of this stage we have the HTML and Layout for a card. 
 
-https://codepen.io/davetaz/pen/xxbWrxr
+http://bit.ly/OA-Pen
 
 ## Step 2 - Create the d3 data grid
 
