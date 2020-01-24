@@ -115,7 +115,34 @@ The finished code block should look similar to the following:
 > In order to make code more human readable it is a good convention to start a new line after every opening `{` and indent each line that follows (using tab or similar) prior to the closing `}`.
 > 
 
-## Step 3 - Create the d3 data grid
+## Step 3 - Starting to build the cross filter. 
+
+[https://skyscanner.net](https://skyscanner.net) is a great example of a cross filter. Using this service you can apply filters to find flights. 
+
+Our cross filter is going to be very similar but for sessions. The list of session we built above will be the list we want to filter. 
+
+The first step of building our crossfilter is to create a list of sessions that can be filtered. 
+
+To do this we need to use a few helper functions from the [dc.js](https://dc-js.github.io/dc.js/) library. 
+
+> **What are code libraries?**
+>
+> Think of a code library as a set of pre-defined routines and functions that you can use to make your life easier.
+> In this tutorial we are using 10 code libraries to help us:
+> 
+> `openactive-crossfilter helpers` - Built to support this tutorial, includes the data preprocessor as well as functions to extract data from OpenActive data. 
+> `jquery` - Streamlines javascript code (e.g. `$('#dc-data-grid').append('Hello world')` instead of `document.getElementById('dc-data-grid').appendChild(document.createTextNode("Hello world"));`
+> `jquery-ui` - Visual elements for jquery
+> `dc-js` - Javascript charting library
+> `crossfilter` - Crossfilter extensions to dc-js
+> `d3` - Data visualisation library
+> `leaflet` - Open Street Map support
+> `leaflet-markercluster` - Map markers and clustering support
+> `dc.leaflet` - Integrates dc-js and leaflet for interactive maps
+> `moment.js` - Library to handle dates, times and all funky formats they come in. 
+>
+> Without these libraries, the code in this tutorial would be thousands of lines long!
+
 
 Use the HTML and Javascript from above to populate the data grid with all 5 items.
 
