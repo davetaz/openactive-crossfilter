@@ -31,21 +31,21 @@ For Step 1, find the following line of code:
     
 This line of code is what is outputting "Hello world!" to the screen. 
 
-1. Change this to say "Hello <your-name>" and you have done the hello world of making a web page.
+Change this to say "Hello <your-name>" and you have done the hello world of making a web page.
 	
-Breaking this line of code down, it works as follows:
-
-Take the phrase:
-
-    Hello world! 
-    
-Put in inside header tags to make it big and bold on our web page:
-
-    <h1>Hello world!</h1>
-    
-Append (add to) to the web-page inside the part of the webpage with ID dc-data-grid (as shown by the red text)
-
-    $('#dc-data-grid').append("<h1>Hello world!</h1>");
+>**_How it works_** Breaking this line of code down, it works as follows:
+>
+>Take the phrase:
+>
+>    `Hello world!` 
+>
+> Put in inside header tags to make it big and bold on our web page:
+>
+>    `<h1>Hello world!</h1>`
+>
+> Append (add to) to the web-page inside the part of the webpage with ID dc-data-grid (as shown by the red text)
+>
+>    `$('#dc-data-grid').append("<h1>Hello world!</h1>");`
     
 Let's make it display the name of our first activity from our data object.
 
