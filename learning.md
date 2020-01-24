@@ -10,19 +10,6 @@ Boiler plate HTML, Javascript and CSS already built!
 
 http://bit.ly/OA-Pen
 
-### Process
-
-1. Download a data feed containing five records
-
-2. Create a card displaying the information for one item. 
-	* Name
-	* Description
-	* Age range (reference function)
-	* Price range (reference function)
-	* Leisure center name
-
-By the end of this stage we have the HTML and Layout for a card. 
-
 #### Step 1
 
 For Step 1, find the following line of code:
@@ -33,7 +20,7 @@ This line of code is what is outputting "Hello world!" to the screen.
 
 Change this to say `Hello *your-name*`. 
 
-
+It should now say `Hello *your-name*` in the bottom panel.
 	
 >**_Explainer_** 
 >
