@@ -214,7 +214,7 @@ and change it to
 
     display: inline-block;
 
-This will show many areas we can put different filters in including their IDs in red. 
+This will show many new areas on the screen. It is in these areas we will put the different filters. Note the IDs of each area are in red text. 
 
 Hide the `CSS` panel and go back to the `JS` panel.
 
