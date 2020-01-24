@@ -76,9 +76,13 @@ To display on the screen change the line with your name in to the following:
  
 Note here we have kept the `h1` tag in order to make it big and bold. Note that everything inside quotes is what get's output, thus to include a value from our data, we have to ensure we are not inside quotes and we use the `+` sign to join these outputs together.
 
+---
+
 **Time to test what you have learnt**
 
 Try appending the session description inside paragraph `p` tags so it displays under the session name.
+
+---
 
 ## Step 2 - Display details for more than one session
 
@@ -185,6 +189,8 @@ Next we need to populate the dataGrid with session data. Add the following:
 
 **Note** Here we are not appending, but rather just returning a set of things to display for each session in one long line. Some extra tags have been added for style. 
 
+---
+
 **Test your knowledge**
 
 Try and add the price range that people might need to pay for each session to your dataGrid.
@@ -194,6 +200,8 @@ Try and add the price range that people might need to pay for each session to yo
 Inside the brackets you give it the `offers` related to a session
 
 It will return you the price ranges of that session from low to high. 
+
+---
 
 >
 > Use the HTML and Javascript from above to populate the data grid with all 5 items.
