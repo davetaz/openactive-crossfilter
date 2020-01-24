@@ -56,22 +56,29 @@ Change this to say `Hello *your-name*`.
 > Other things to remember:
 >    1. If you open a quote or bracket, you have to close it again
 >    2. All completed code statements end with `;`
+>
     
 Let's make it display the name of our first activity from our data object.
 
-To do this we need to select the first session (item in the data object) from all sessions (items in the data object). Add this line above the one with your name in it:
+To do this we need to select the first session (item in the data object) from all sessions (items in the data object). 
+
+Add this line above the one with your name in it:
 
     session = items[0];
     
-As a simple example we are going to output the name of the session. The name of the session is contained in the `data.name` variable of the item. To display on the screen change the line with your name in to the following:
+As a simple example we are going to output the name of the session. 
+
+The name of the session is contained in the `data.name` variable of the item. 
+
+To display on the screen change the line with your name in to the following:
 
      $('#dc-data-grid').append("<h1>" + session.data.name + "</h1>");
  
 Note here we have kept the `h1` tag in order to make it big and bold. Note that everything inside quotes is what get's output, thus to include a value from our data, we have to ensure we are not inside quotes and we use the `+` sign to join these outputs together.
 
-*Time to test what you have learnt*
+**Time to test what you have learnt**
 
-Try appending the session description inside paragraph `p` tags as well as the session name!
+Try appending the session description inside paragraph `p` tags so it displays under the session name.
 
 ## Step 2 - Create the d3 data grid
 
