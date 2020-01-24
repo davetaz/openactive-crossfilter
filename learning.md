@@ -130,7 +130,8 @@ To do this we need to use a few helper functions from the [dc.js](https://dc-js.
 > Think of a code library as a set of pre-defined routines and functions that you can use to make your life easier.
 > In this tutorial we are using 10 code libraries to help us:
 > 
-> `openactive-crossfilter helpers` - Built to support this tutorial, includes the data preprocessor as well as functions to extract data from OpenActive data. 
+> `openactive-crossfilter helpers` - Built to support this tutorial, includes the data preprocessor as well as functions to extract data from OpenActive data.
+>
 > `jquery` - Streamlines javascript code (e.g. `$('#dc-data-grid').append('Hello world')` instead of `document.getElementById('dc-data-grid').appendChild(document.createTextNode("Hello world"));`
 > `jquery-ui` - Visual elements for jquery
 > `dc-js` - Javascript charting library
