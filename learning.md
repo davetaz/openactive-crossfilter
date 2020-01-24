@@ -154,13 +154,52 @@ To do this we need to use a few helper functions from the [dc.js](https://dc-js.
 > You can find how these libraries are included in codePen by clicking the settings button and clicking `JS`.
 > As many of the libraries also have associated visual style elements, we also have to include their own stylesheets. These can be found under the `CSS` section of settings in codePen.
 >
-
 >
 
+Find the following line in your code:
 
-Use the HTML and Javascript from above to populate the data grid with all 5 items.
+     /* FOR STEP THREE DELETE THIS LINE
+     
+and delete it. Also delete this one:
 
-https://codepen.io/davetaz/pen/OJPvgOK
+      FOR STEP THREE DELETE THIS LINE */ 
+      
+Take a read through this block of code you have just uncommented.
+
+Find the line that reads
+
+     //STEP 3 CODE GOES HERE
+
+Add the following line below this one
+
+    var dataGrid = dc.dataGrid('#dc-data-grid');
+    
+This line sets up the dataGrid object as a `dc.dataGrid` and tells it that the grid will be going in the `#dc-data-grid` element on our web page. 
+
+Next we need to populate the dataGrid with session data. Add the following:
+
+    dataGrid
+        .html(function(session) {
+            return '<item><h1>' + session.data.name + '</h1>' + '<p>' + session.data.description + '</p>' + '</item>';
+        });
+
+**Note** Here we are not appending, but rather just returning a set of things to display for each session in one long line. Some extra tags have been added for style. 
+
+**Test your knowledge**
+
+Try and add the price range that people might need to pay for each session to your dataGrid.
+
+*Hint:* The OpenActive crossfilter helper library has a function called `getPriceRange()` 
+
+Inside the brackets you give it the `offers` related to a session
+
+It will return you the price ranges of that session from low to high. 
+
+>
+> Use the HTML and Javascript from above to populate the data grid with all 5 items.
+> 
+> https://codepen.io/davetaz/pen/OJPvgOK
+>
 
 ## Step 3 - Create the activity row chart
 
