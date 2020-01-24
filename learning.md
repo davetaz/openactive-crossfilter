@@ -234,7 +234,6 @@ Then configure it:
 	.dimension(activity)
 	.group(activityGroup);
 	
-	
 This should display you a rowChart of activityTypes on the screen which you can then click in to filter the dataGrid. 
 
 **Congratualations you just built a working cross filter**
