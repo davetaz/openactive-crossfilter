@@ -133,16 +133,29 @@ To do this we need to use a few helper functions from the [dc.js](https://dc-js.
 > `openactive-crossfilter helpers` - Built to support this tutorial, includes the data preprocessor as well as functions to extract data from OpenActive data.
 >
 > `jquery` - Streamlines javascript code (e.g. `$('#dc-data-grid').append('Hello world')` instead of `document.getElementById('dc-data-grid').appendChild(document.createTextNode("Hello world"));`
+>
 > `jquery-ui` - Visual elements for jquery
+>
 > `dc-js` - Javascript charting library
+>
 > `crossfilter` - Crossfilter extensions to dc-js
+>
 > `d3` - Data visualisation library
+>
 > `leaflet` - Open Street Map support
+>
 > `leaflet-markercluster` - Map markers and clustering support
+>
 > `dc.leaflet` - Integrates dc-js and leaflet for interactive maps
+>
 > `moment.js` - Library to handle dates, times and all funky formats they come in. 
 >
 > Without these libraries, the code in this tutorial would be thousands of lines long!
+> You can find how these libraries are included in codePen by clicking the settings button and clicking `JS`.
+> As many of the libraries also have associated visual style elements, we also have to include their own stylesheets. These can be found under the `CSS` section of settings in codePen.
+>
+
+>
 
 
 Use the HTML and Javascript from above to populate the data grid with all 5 items.
