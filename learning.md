@@ -204,7 +204,7 @@ It will return you the price ranges of that session from low to high.
 
 In this stage we will create a way to filter the dataGrid. In this case a rowChart of activity types. 
 
-First we need to receal the hidden structure on our page where the filters are going to do. 
+First we need to reveal the hidden structure on our page where the filters are going to be. 
 
 In codePen reveal the `CSS` panel and find the line at the top that reads
 
