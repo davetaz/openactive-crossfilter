@@ -33,9 +33,11 @@ This line of code is what is outputting "Hello world!" to the screen.
 
 Change this to say "Hello <your-name>" and you have done the hello world of making a web page.
 	
->**_How it works_** Breaking this line of code down, it works as follows:
+>**_Explainer_** 
 >
->Take the phrase:
+> Breaking this line of code down, it works as follows:
+>
+> Take the phrase:
 >
 >    `Hello world!` 
 >
@@ -43,9 +45,15 @@ Change this to say "Hello <your-name>" and you have done the hello world of maki
 >
 >    `<h1>Hello world!</h1>`
 >
+> An opening tag has a `<` and a `>` either side of the tag (in this case `h1`). To close the tag we need to add a `\`
+>
 > Append (add to) to the web-page inside the part of the webpage with ID dc-data-grid (as shown by the red text)
 >
 >    `$('#dc-data-grid').append("<h1>Hello world!</h1>");`
+>
+> Other things to remember:
+>    1. If you open a quote or bracket, you have to close it again
+>    2. All completed code statements end with `;`
     
 Let's make it display the name of our first activity from our data object.
 
