@@ -109,7 +109,12 @@ The finished code block should look similar to the following:
         $('#dc-data-grid').append('<h1>' + session.data.name + '</h1>');
         $('#dc-data-grid').append("...");
     });
-    
+
+> **Coding best practices**
+>
+> In order to make code more human readable it is a good convention to start a new line after every opening `{` and indent each line that follows (using tab or similar) prior to the closing `}`.
+> 
+
 ## Step 3 - Create the d3 data grid
 
 Use the HTML and Javascript from above to populate the data grid with all 5 items.
