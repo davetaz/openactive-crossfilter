@@ -31,7 +31,9 @@ For Step 1, find the following line of code:
     
 This line of code is what is outputting "Hello world!" to the screen. 
 
-Change this to say "Hello *your-name*" and you have done the hello world of making a web page.
+Change this to say `Hello *your-name*`. 
+
+
 	
 >**_Explainer_** 
 >
