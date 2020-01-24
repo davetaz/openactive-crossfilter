@@ -180,7 +180,7 @@ Next we need to populate the dataGrid with session data. Add the following:
 
     dataGrid
         .html(function(session) {
-            return '<item><h1>' + session.data.name + '</h1>' + '<p>' + session.data.description + '</p>' + '</item>';
+            return '<item>' + <h1>' + session.data.name + '</h1>' + '<p>' + session.data.description + '</p>' + '</item>';
         });
 
 **Note** Here we are not appending, but rather just returning a set of things to display for each session in one long line. Some extra tags have been added for style. 
