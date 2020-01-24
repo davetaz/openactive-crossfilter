@@ -147,7 +147,7 @@ To do this we need to use a few helper functions from the [dc.js](https://dc-js.
 >
 >
 
-Find the following lines in your code and follow the instructions:
+Find the following lines in your code and follow the their instuctions:
 
     // /* FOR STEP THREE DETELE THE TWO // AT THE BEGINNING OF THIS LINE
     
@@ -163,7 +163,7 @@ Find the line that reads
 
      //STEP 3 CODE GOES HERE
 
-Add the following line below this one
+Add the following line below it
 
     var dataGrid = dc.dataGrid('#dc-data-grid');
     
