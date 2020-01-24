@@ -160,15 +160,17 @@ To do this we need to use a few helper functions from the [dc.js](https://dc-js.
 >
 >
 
-Find the following line in your code:
+Find the following lines in your code and follow the instructions:
 
-     /* FOR STEP THREE DELETE THIS LINE
-     
-and delete it. Also delete this one:
+    // /* FOR STEP THREE DETELE THE TWO // AT THE BEGINNING OF THIS LINE
+    
+    // */ // FOR STEP THREE DETELE THE TWO // AT THE BEGINNING OF THIS LINE
 
-      FOR STEP THREE DELETE THIS LINE */ 
+    /* FOR STEP THREE DELETE THIS LINE
+
+    FOR STEP THREE DELETE THIS LINE */ 
       
-Take a read through this block of code you have just uncommented.
+This will stop the code in step 1 and step 2 from working and prepare us to do the same thing in a different way. Take a read through what we have just uncommented.
 
 Find the line that reads
 
@@ -210,6 +212,50 @@ It will return you the price ranges of that session from low to high.
 >
 
 ## Step 3 - Create the activity row chart
+
+In this stage we will create a way to filter the dataGrid. In this case a rowChart of activity types. 
+
+First we need to receal the hidden structure on our page where the filters are going to do. 
+
+In codePen reveal the `CSS` panel and find the line at the top that reads
+
+    display: none;
+    
+and change it to
+
+    display: inline-block;
+
+This will show many areas we can put different filters in including their IDs in red. 
+
+Hide the `CSS` panel and go back to the `JS` panel.
+
+Find the line that reads
+
+    //STEP 4 CODE GOES HERE
+    
+Add the following line of code to set up the rowChart
+
+    var activityChart = dc.rowChart('#activityChart');
+    
+Then configure it:
+
+    activityChart
+        .width(400)
+	.height(200)
+	.dimension(activity)
+	.group(activityGroup);
+	
+	
+This should display you a rowChart of activityTypes on the screen which you can then click in to filter the dataGrid. 
+
+**Congratualations you just built a working cross filter**
+	
+> **The dc-js crossfilter chart types**
+> 
+> There are many types of chart or grid that are part of the dc-js crossfilter library. Documentation on them can be access at [http://dc-js.github.io/dc.js/docs/html/](http://dc-js.github.io/dc.js/docs/html/). From there you can find rowChart and find all the ways it can be configured. 
+>
+> It can be difficult to get started as it is hard to work out from the documentation what the minimal configuration is to make a chart display
+>
 
 https://codepen.io/davetaz/pen/ZEYxyxK
 
