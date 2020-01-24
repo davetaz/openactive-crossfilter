@@ -80,7 +80,37 @@ Note here we have kept the `h1` tag in order to make it big and bold. Note that 
 
 Try appending the session description inside paragraph `p` tags so it displays under the session name.
 
-## Step 2 - Create the d3 data grid
+## Step 2 - Display details for more than one session
+
+In this stage we are going to build what is known as an itterator. This itterator will loop through every session and displays the name and description of all the sessions in our dataset. 
+
+To do this replace the line
+
+    session = items[0];
+    
+with the following
+
+    items.forEach(function(session) {
+    
+> **Explainer**
+> 
+> This line is similar to the one we have removed, it still contains `items` and `session`. We are using the `forEach` itterator to loop through the sessions. 
+>
+
+**Note**: We have unclosed brackets `(` and `{` as well as a missing end of code block charecter `;`
+
+These closing brackets and code block charecter need to go after we have finised appending the session name and description to the screen. 
+
+Add `)};` after your code lines that append name and description to the `#dc-data-grid`. 
+
+The finished code block should look similar to the following:
+
+    items.forEach(function(session) {
+        $('#dc-data-grid').append('<h1>' + session.data.name + '</h1>');
+        $('#dc-data-grid').append("...");
+    });
+    
+## Step 3 - Create the d3 data grid
 
 Use the HTML and Javascript from above to populate the data grid with all 5 items.
 
