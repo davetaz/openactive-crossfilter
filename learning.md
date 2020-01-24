@@ -92,7 +92,7 @@ with the following
 
 These closing brackets and code block charecter need to go after we have finised appending the session name and description to the screen. 
 
-Add `)};` after your code lines that append name and description to the `#dc-data-grid`. 
+Add `});` after your code lines that append name and description to the `#dc-data-grid`. 
 
 The finished code block should look similar to the following:
 
