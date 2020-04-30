@@ -21,7 +21,7 @@
 		"d3": "^4.10.0",
 		"dc": "^3.1.5",
 		"dc.leaflet": "git://github.com/dc-js/dc.leaflet.js",
-		"jquery": ">3.0.0",
+		"jquery": ">3.5.0",
 		"jquery-ui-dist": ">1.0.0",
 		"local-web-server": "^3.0.7",
 		"moment": ">2.0.0"
