@@ -1,6 +1,6 @@
 //When all dependancies have loaded, load the data. We'll do this locally to save a remote call.
 $( document ).ready(function() {
-	d3.json('https://davetaz.github.io/openactive-crossfilter/data/example.json', function(data) {
+	d3.json('data/example.json', function(data) {
 		items = data.items;
 		renderCharts(getData(items));
 	});
@@ -58,7 +58,7 @@ function renderCharts(items) {
 		.group(activityGroup)
 		//.dimension(category)
 		//.group(categoryGroup)
-		//.filterHandler(function(dimension, filter){     
+		//.filterHandler(function(dimension, filter){
 	    //    dimension.filter(function(d) {return activityChart.filter() != null ? d.indexOf(activityChart.filter()) >= 0 : true;}); // perform filtering
 	    //    return filter; // return the actual filter value
 	    //   })
@@ -67,7 +67,7 @@ function renderCharts(items) {
 	//Add cost slider
 	var minPrice = 0;
 	var maxPrice = 0;
-	
+
 	var price = cf.dimension(function (d) {
 		thisPrice = d.data.offers[0].price;
 		if (thisPrice < minPrice) {
@@ -80,7 +80,7 @@ function renderCharts(items) {
 		}
 		return thisPrice;
 	});
-	
+
 	$( "#costSlider" ).slider({
 		range: true,
 		min: 0,
@@ -107,7 +107,7 @@ function renderCharts(items) {
 		}
 	});
 
-	// Dats of week, need to move the cleaning to the pre-processor
+	// Days of week, need to move the cleaning to the pre-processor
 	var dayOfWeek = cf.dimension(function(d) {
 		if (d.data.eventSchedule) {
 			return d.data.eventSchedule.byDay;
@@ -134,13 +134,13 @@ function renderCharts(items) {
 	}
 
 	var dayOfWeekChart = dc.rowChart("#dayOfWeekChart");
-    dayOfWeekChart                              
+    dayOfWeekChart
 	    .renderLabel(true)
 	    .width(400)
 	    .height(200)
 	    .dimension(dayOfWeek)
 	    .group(dayOfWeekGroup)
-	    .filterHandler(function(dimension, filter){     
+	    .filterHandler(function(dimension, filter){
 	        dimension.filter(function(d) {return dayOfWeekChart.filter() != null ? d.indexOf(dayOfWeekChart.filter()) >= 0 : true;}); // perform filtering
 	        return filter; // return the actual filter value
 	       })
@@ -231,7 +231,7 @@ function renderCharts(items) {
 		}
 		return thisDuration;
 	});
-	
+
 	$( "#durationSlider" ).slider({
 		range: true,
 		min: minDuration,

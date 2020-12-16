@@ -1,71 +1,44 @@
 # Steps to learn how to build the cross filter
 
-TODO: Make helpers a classed thing, so you call helpers.reduceAdd...
+## Introduction
 
-## Step 1 - Cards to go in the data Grid
-
-### Requirements
+## Requirements
 
 Boiler plate HTML, Javascript and CSS already built!
 
-http://bit.ly/OA-Pen
+Check out https://codepen.io/jargonaut/pen/BaLWJBL
 
-#### Step 1
+# Step 1
+In this step we will look at how to interrogate the data and extract what we need to populate some simple information cards in a grid layout.
 
-For Step 1, find the following line of code:
+### Make a change and see the results
+
+Find the following line of code:
 
     $('#dc-data-grid').append("<h1>Hello world!</h1>");
-    
-This line of code is what is outputting "Hello world!" to the screen. 
 
-Change this to say `Hello *your-name*`. 
+This line is what outputs "Hello world!" to the screen. Change this to say `Hello *your-name*`.
 
 It should now say `Hello *your-name*` in the bottom panel.
-	
->**_Explainer_** 
->
-> Breaking this line of code down, it works as follows:
->
-> Take the phrase:
->
->    `Hello world!` 
->
-> Put in inside header tags to make it big and bold on our web page:
->
->    `<h1>Hello world!</h1>`
->
-> An opening tag has a `<` and a `>` either side of the tag (in this case `h1`). To close the tag we need to add a `/`
->
-> Append (add to) to the web-page inside the part of the webpage with ID dc-data-grid (as shown by the red text)
->
->    `$('#dc-data-grid').append("<h1>Hello world!</h1>");`
->
-> Other things to remember:
->    1. If you open a quote or bracket, you have to close it again
->    2. All completed code statements end with `;`
->
-    
+
+### Change the code to display activities
+
 Let's make it display the name of our first activity from our data object.
 
-To do this we need to select the first session (item in the data object) from all sessions (items in the data object). 
-
-Add this line above the one with your name in it:
+To do this we need to select the first session (*item* in the data object) from all sessions (*items* in the data object). Add this line above the one with your name in it:
 
     session = items[0];
-    
-As a simple example we are going to output the name of the session. 
 
-The name of the session is contained in the `data.name` variable of the item. 
-
-To display on the screen change the line with your name in to the following:
+As a simple example we are going to output just the name of the session. This is contained in the `data.name` variable of the item. To display on the screen, change the line with your name in to the following:
 
      $('#dc-data-grid').append("<h1>" + session.data.name + "</h1>");
- 
-Note here we have kept the `h1` tag in order to make it big and bold. Note that everything inside quotes is what get's output, thus to include a value from our data, we have to ensure we are not inside quotes and we use the `+` sign to join these outputs together.
+
+Here we have kept the `h1` tag in order to make it big and bold.  
+Everything inside quotes is what gets output, so to include a value from our data, we have to ensure we are not inside quotes and we use the `+` sign to join these outputs together.
 
 ---
 
-**Time to test what you have learnt**
+#### Test what you've learned
 
 Try appending the session description inside paragraph `p` tags so it displays under the session name.
 
@@ -73,91 +46,74 @@ Try appending the session description inside paragraph `p` tags so it displays u
 
 ## Step 2 - Display details for more than one session
 
-In this stage we are going to build what is known as an itterator. This itterator will loop through every session and displays the name and description of all the sessions in our dataset. 
+
+In this stage we are going to build an iterator. This is a piece of code that loops through every session in the dataset and displays the name and description for each one.
+
+### Add an iterator
 
 To do this replace the line
 
     session = items[0];
-    
+
 with the following
 
     items.forEach(function(session) {
-    
+
 > **Explainer**
-> 
-> This line is similar to the one we have removed, it still contains `items` and `session`. We are using the `forEach` itterator to loop through the sessions. 
+>
+> This line is similar to the one we have removed, it still contains `items` and `session`. We are using the `forEach` iterator to loop through the sessions.
 >
 
-**Note**: We have unclosed brackets `(` and `{` as well as a missing end of code block charecter `;`
+**Note**: We have unclosed brackets `(` and `{` as well as a missing end of code block character `;`
 
-These closing brackets and code block charecter need to go after we have finised appending the session name and description to the screen. 
+These closing brackets and code block character need to go after we have finished appending the session name and description to the screen.
 
-Add `});` after your code lines that append name and description to the `#dc-data-grid`. 
+Add `});` after your code lines that append name and description to the `#dc-data-grid`.
 
-The finished code block should look similar to the following:
+The finished code block should look soemthing like this:
 
     items.forEach(function(session) {
         $('#dc-data-grid').append('<h1>' + session.data.name + '</h1>');
-        $('#dc-data-grid').append("...");
+        $('#dc-data-grid').append("..."); // your code for adding session description 
     });
 
-> **Coding best practices**
+> **TIP**
 >
-> In order to make code more human readable it is a good convention to start a new line after every opening `{` and indent each line that follows (using tab or similar) prior to the closing `}`.
+> To make code more human-readable it's a good convention to start a new line after every opening `{` and indent each line that follows (using tab or similar) prior to the closing `}`.
 > 
 
-## Step 3 - Starting to build the cross filter. 
+## Step 3
+### Starting to build the cross filter.
+[https://skyscanner.net](https://skyscanner.net) is a great example of a crossfilter. We are going to make something very similar, but for sessions rather than flights. We will use the list of sessions we built in Step 2 to create our filters.
 
-[https://skyscanner.net](https://skyscanner.net) is a great example of a cross filter. Using this service you can apply filters to find flights. 
+> - make data grid visible
+> LO: adjusting CSS
+> - make session list
+> LO: address the dataset and work out what's in it
+> - make activity row chart
+> LO: making a d3 row chart
+> - make session duration chart
+> LO: making a d3 line chart
 
-Our cross filter is going to be very similar but for sessions. The list of session we built above will be the list we want to filter. 
+#### Make a list of sessions for our filter
 
-The first step of building our crossfilter is to create a list of sessions that can be filtered. 
+The first step of building our crossfilter is to create a list of sessions that can be filtered.
 
-To do this we need to use a few helper functions from the [dc.js](https://dc-js.github.io/dc.js/) library. 
+To do this we need to use a few helper functions from the [dc.js](https://dc-js.github.io/dc.js/) library.
 
-> **What are code libraries?**
+> **What is a code library?**
 >
 > Think of a code library as a set of pre-defined routines and functions that you can use to make your life easier.
-> In this tutorial we are using 10 code libraries to help us:
+> In this tutorial we are using 10 code libraries to help us; we've included a list of them at the end of this document, and you can also look at them in CodePen by clicking on the Settings (gear wheel) icon at the top of the JS panel. 
+
+Comment out the code you added in Step 1 and Step 2
+
+This will stop the code in step 1 and step 2 from working and prepare us to do the same thing in a different way.
+
+> **_How do I comment out code?_**
 > 
-> `openactive-crossfilter helpers` - Built to support this tutorial, includes the data preprocessor as well as functions to extract data from OpenActive data.
->
-> `jquery` - Streamlines javascript code (e.g. `$('#dc-data-grid').append('Hello world')` instead of `document.getElementById('dc-data-grid').appendChild(document.createTextNode("Hello world"));`
->
-> `jquery-ui` - Visual elements for jquery
->
-> `dc-js` - Javascript charting library
->
-> `crossfilter` - Crossfilter extensions to dc-js
->
-> `d3` - Data visualisation library
->
-> `leaflet` - Open Street Map support
->
-> `leaflet-markercluster` - Map markers and clustering support
->
-> `dc.leaflet` - Integrates dc-js and leaflet for interactive maps
->
-> `moment.js` - Library to handle dates, times and all funky formats they come in. 
->
-> Without these libraries, the code in this tutorial would be thousands of lines long!
-> You can find how these libraries are included in codePen by clicking the settings button and clicking `JS`.
-> As many of the libraries also have associated visual style elements, we also have to include their own stylesheets. These can be found under the `CSS` section of settings in codePen.
->
->
-
-Find the following lines in your code and follow the their instuctions:
-
-    // /* FOR STEP THREE DETELE THE TWO // AT THE BEGINNING OF THIS LINE
-    
-    // */ // FOR STEP THREE DETELE THE TWO // AT THE BEGINNING OF THIS LINE
-
-    /* FOR STEP THREE DELETE THIS LINE
-
-    FOR STEP THREE DELETE THIS LINE */ 
-      
-This will stop the code in step 1 and step 2 from working and prepare us to do the same thing in a different way. Take a read through what we have just uncommented.
+> This varies from language to language. To comment out a line of code in javascript, you type `//` at the beginning of the line. You will see this in the CodePen where we have put dividers and hints to show where things should go.
+> To comment out several lines in one go, type `/*` at the beginning of the block and `*/` at the end.
 
 Find the line that reads
 
@@ -166,10 +122,10 @@ Find the line that reads
 Add the following line below it
 
     var dataGrid = dc.dataGrid('#dc-data-grid');
-    
-This line sets up the dataGrid object as a `dc.dataGrid` and tells it that the grid will be going in the `#dc-data-grid` element on our web page. 
 
-At this point the grid might be full of code telling you that you need to provide an html() handling param. This is the content of the datagrid. 
+This line sets up the dataGrid object as a `dc.dataGrid` and tells it that the grid will be going in the `#dc-data-grid` element on our web page.
+
+At this point your output will change; your list will disappear, and you may see messages telling you that you need to provide an html() handling param. This is the content of the datagrid.
 
 Let's define the content. Add the following line:
 
@@ -178,90 +134,350 @@ Let's define the content. Add the following line:
             return '<item>' + '<h1>' + session.data.name + '</h1>' + '<p>' + session.data.description + '</p>' + '</item>';
         });
 
-**Note** Here we are not appending, but rather just returning a set of things to display for each session in one long line. Some extra tags have been added for style. 
+**Note** Here we are not appending, but rather just returning a set of things to display for each session in one long line. Some extra tags have been added for style.
+
+Finally, add these lines under `dataGrid`:  
+  
+
+      .dimension(activity)
+      .section(function(item) {
+        return item.id;
+      })
+      .size(1000);
+
+These lines do three things:  
+
+* set up the dataGrid to depend on activityName as a key variable,  
+* give each item in the grid an ID,  
+* limit the number of displayed items on the screen to 1000.
 
 ---
 
 **Test your knowledge**
 
-Try and add the price range that people might need to pay for each session to your dataGrid.
+Try adding another detail to your dataGrid: the price range that people might need to pay for each session.
 
-*Hint:* The OpenActive crossfilter helper library has a function called `getPriceRange()` 
+>*Hint:* The OpenActive crossfilter helper library has a function called `getPriceRange()`  
+>Inside the brackets you give it the `offers` related to a session, and it returns the price ranges of that session from low to high.
 
-Inside the brackets you give it the `offers` related to a session
+---
+Use the HTML and Javascript from above to populate your dataGrid with all three items:
 
-It will return you the price ranges of that session from low to high. 
+* title, 
+* description, 
+* price range.
+
+#### Create the activity row chart
+
+Now we need to create a way to filter the dataGrid, in this case a rowChart of activity types. First we need to reveal the hidden structure on our page where the filters are going to be.
+
+In CodePen reveal the `CSS` panel and find the section at the top that reads
+
+    panel {
+      display: none;
+    }
+
+Change this to
+
+    panel {
+      display: inline-block;
+    }
+
+This will make several new areas visible on the screen. These areas are where we will put the different filters. Note the ID of each area is shown in red text.
+
+Hide the `CSS` panel and go back to the `JS` panel.
+
+Add the following line of code to set up the rowChart:
+
+    var activityChart = dc.rowChart('#activityChart');
+
+Then configure it:
+
+    activityChart
+      .width(400)
+      .height(200)
+      .dimension(activity)
+      .group(activityGroup);
+
+This should display a rowChart of activityTypes on the screen which you can then click on to filter the dataGrid.
+
+**Congratulations! You just built a working cross filter.**
+
+> **The dc-js crossfilter chart types**
+>
+> There are many types of charts and grids in the dc-js crossfilter library. It can be difficult to get started sometimes, as the documentation doesn't always make it clear what the minimal configuration is to make a chart display. Now you have a basic chart showing up, you can check out the different options and configurations for your rowChart at [http://dc-js.github.io/dc.js/docs/html/](http://dc-js.github.io/dc.js/docs/html/).
+>
+
+Now for a basic line chart. Let's get the session length (duration) for each activity and use it to make another facet on our crossfilter.
+
+Add the following lines underneath the code for your activity rowChart:
+
+    var duration = cf.dimension(function(item) {
+      dur = item.data.duration;
+      return moment.duration(dur).asMinutes();
+    });
+
+    var durationGroup = duration.group();
+
+    var durationChart = dc.lineChart('#durationChart');
+
+    durationChart
+	  .width(400)
+	  .height(100)
+	  .dimension(duration)
+	  .group(durationGroup)
+	  .x(d3.scaleLinear().domain([0,120]))
+	  .xUnits(function(){
+	    return 20;
+	    }); 
+
+
+You should now see a line chart showing the activity duration by number of sessions appearing under the `#durationChart` label. It may be a little messy since we haven't done anything with the styling yet, but we can see it working. If you click on any row in the activity chart you should see the duration chart change as the data is filtered.
+
+---
+**Test your knowledge**
+
+Can you change the duration line chart into a bar chart instead?
+>*Hint*
+>The dc.js documentaiton describes how to create different chart types.
 
 ---
 
->
-> Use the HTML and Javascript from above to populate the data grid with all 5 items.
-> 
-> https://codepen.io/davetaz/pen/OJPvgOK
->
+## Step 4
+### UI improvements
 
-## Step 3 - Create the activity row chart
+We have a working crossfilter, but now we need to add a few more elements to make it easier to use. 
 
-In this stage we will create a way to filter the dataGrid. In this case a rowChart of activity types. 
+#### Search
+A search function will help to filter the data by keyword. You can instruct this function to look in multiple fields within the data to find a match, but we will start with just two:
 
-First we need to reveal the hidden structure on our page where the filters are going to be. 
+* title
+* description
 
-In codePen reveal the `CSS` panel and find the line at the top that reads
-
-    display: none;
-    
-and change it to
-
-    display: inline-block;
-
-This will show many new areas on the screen. It is in these areas we will put the different filters. Note the IDs of each area are in red text. 
-
-Hide the `CSS` panel and go back to the `JS` panel.
+as these are the free text fields that are most likely to coontain the sort of keywords someone might be looking for. Just as we created a list of activities for our dataGrid to display, now we need something very similar for the Search box to work with.
 
 Find the line that reads
 
     //STEP 4 CODE GOES HERE
     
-Add the following line of code to set up the rowChart
+and add the following lines of code.
 
-    var activityChart = dc.rowChart('#activityChart');
+Build a list to search on:  
+
+    var searchText = cf.dimension(function(item) {
+      return item.data.name + " " + item.data.description;
+    });
+
+Define what we want to show the user - in this case, instead of a `rowChart` or `lineChart` it will be a `textFilterWidget`.
     
-Then configure it:
+    var search = dc.textFilterWidget("#search");
 
-    activityChart
-        .width(400)
-	.height(200)
-	.dimension(activity)
-	.group(activityGroup);
-	
-This should display you a rowChart of activityTypes on the screen which you can then click in to filter the dataGrid. 
+And finally, we allocate our list of fields - the `searchtext` variable - as a dimension for the crossfilter.
 
-**Congratualations you just built a working cross filter**
-	
-> **The dc-js crossfilter chart types**
-> 
-> There are many types of chart or grid that are part of the dc-js crossfilter library. Documentation on them can be access at [http://dc-js.github.io/dc.js/docs/html/](http://dc-js.github.io/dc.js/docs/html/). From there you can find rowChart and find all the ways it can be configured. 
->
-> It can be difficult to get started as it is hard to work out from the documentation what the minimal configuration is to make a chart display
->
+    search.dimension(searchText);
 
-https://codepen.io/davetaz/pen/ZEYxyxK
+A search box should now be visible under the #search label; test it by entering some basic keywords (ones that you know should exist in the data) and making sure it returns the expected results. 
 
-## Step 4 - Create a line chart of the duration
+---
+**Test your knowledge**  
+Look at the sample dataset `example.json` and see whether there are any other fields that might be useful to add to the search function.  
+Can you work out how to include them?  
+>*Hint* They need to be part of the `searchText` variable.
 
-https://codepen.io/davetaz/pen/eYmMRjE
+---
 
-Maybe add duration to your cards??? 
+#### Create a slider control
+At the moment our crossfilter is showing `cost` as a line chart. It works, but it isn't the most intuitive thing to use as a filter!  Luckily the libraries we are using include another object, the slider, that is commonly used as a filtering element on interactive dashboards.  
+Let's take a look at how we build one.  
 
-## Step 4 - Create the search box
+We already have the data, currently feeding into the chart. What we need to do is take that data and pass it to the slider function. This is a little more complex than the charts you've created so far, so you can use the following as a template.  
 
-https://codepen.io/davetaz/pen/GRgxvYN
+Add this block under your search function code:  
+    
+    // defining min and max prices
+    
+    var minPrice = 0;
+    var maxPrice = 0;
+    var price = cf.dimension(function (d) {
+      thisPrice = d.data.offers[0].price;
+      if (thisPrice < minPrice) {
+        minPrice = thisPrice;
+      }
+      if (thisPrice > maxPrice) {
+        maxPrice = thisPrice;
+        $("#costHigh").text("£" + currency(thisPrice));
+        $("#costHigh").val(thisPrice);
+      }
+      return thisPrice;
+    });
+    
+    // building the slider
+    
+    $("#costSlider").slider({
+      min: 0,
+      max: maxPrice,
+      step: 0.5,
+      values: [0, maxPrice],
+      range: true,
+      slide: function (event, ui) {
+        $("#costLow").text("£" + currency(ui.values[0]));
+        $("#costHigh").text("£" + currency(ui.values[1]));
+        $("#costLow").val(ui.values[0]);
+        $("#costHigh").val(ui.values[1]);
+        if (document.getElementById("costLow").value != "") {
+          start = document.getElementById("costLow").value;
+        }
+        if (document.getElementById("costHigh").value != "") {
+          end = document.getElementById("costHigh").value;
+        }
+        price.filterRange([start, end]);
+        dc.redrawAll();
+        if (ui.values[0] + 0.1 >= ui.values[1]) {
+          return false;
+        }
+      }
+    });
+
+---
+**Test your knowledge**
+
+Your crossfilter is starting to get more complex now, with labels and sections leftover from previous steps. Try tidying it up a little.
+
+* Comment out (or delete) the JS and HTML you used to create the Cost line chart.
+* Look for other code that's no longer being used. You can decide to keep it if you might want to use it later, or to delete it if you're sure you won't need it.
+
+---
+
+## Step 5
+### Create the map
+
+Our sample data includes information where activities are happening, so let's add a map with selectable markers. 
+
+First we need to find the location data; let's take a look at the `example.json` file again.  
+Each activity has a section called `location` which includes place names, address details and coordinates.
+
+    "location": {
+                    "type": "Place",
+                    "url": "https://https://www.everyoneactive.com/centre/blackbrook-leisure-centre-spa/",
+                    "name": "Blackbrook Leisure Centre",
+                    "identifier": "0220",
+                    "address": {
+                        "type": "PostalAddress",
+                        "streetAddress": "Blackbrook Way",
+                        "addressLocality": "Taunton",
+                        "addressRegion": "Somerset",
+                        "postalCode": "TA1 2RW",
+                        "addressCountry": "GB"
+                    },
+                    "geo": {
+                        "type": "GeoCoordinates",
+                        "latitude": 51.0129,
+                        "longitude": -3.07004
+                    }
+                },
 
 
-## Step 5 - Create the map
 
-## Step 6 - Take the line chart for duration and turn it to a slider
+Latitude and longitude coordinates are what we'll use to place markers on our map, so let's extract those first. Add the following code blocks under the line `// STEP 5 CODE GOES HERE`.
 
-## Step 7 - Make a rowChart for categories 
+    var locations = {};
+    
+    var geo = cf.dimension(function (d) {
+      if (d.data.location.geo) {
+        point = d.data.location.geo.latitude + "," + d.data.location.geo.longitude;
+        locations[point] = d.data.location;
+        return point;
+      } else {
+        return "0,0";
+      }
+    });
+    
+    var geoGroup = geo.group();
 
-This requires all the reduceAdd bits etc.
+Next we create the map object:
+
+    var mapChart = dc_leaflet.markerChart("#map");
+    
+Then we add some formatting and pass it the data:
+
+    mapChart
+    .dimension(geo)
+    .group(geoGroup)
+    .width(350)
+    .height(450)
+    .center([53.2, -1.5])
+    .zoom(6)
+    .cluster(true)
+    .popup(function (d) {
+      loc = locations[d.key];
+      if (loc) {
+        return (
+          "<h2><a target='_blank' href='" +
+          loc.url +
+          "'>" +
+          loc.name +
+          "</a></h2>" +
+          "<p>" +
+          loc.address.addressRegion +
+          "<br/><br/>" +
+          loc.telephone
+        );
+      } else {
+        return "unknown";
+      }
+    });
+    
+Note that we also call in some of the human-readable address information to populate the `popup` tooltip option.
+
+---
+**Test your knowledge**  
+Try adding the full address to the tooltip.
+
+----
+
+
+# References
+
+## Code libraries
+Without these libraries, the code in this tutorial would be thousands of lines long!  
+
+`openactive-crossfilter helpers` - Built to support this tutorial, includes the data preprocessor as well as functions to extract data from OpenActive data. 
+ 
+`jquery` - Streamlines javascript code  
+>(e.g. `$('#dc-data-grid').append('Hello world')` instead of  `document.getElementById('dc-data-grid').appendChild(document.createTextNode("Hello world"));`  
+
+`jquery-ui` - Visual elements for jquery.  
+
+`dc-js` - Javascript charting library  
+
+`crossfilter` - Crossfilter extensions to dc-js  
+
+`d3` - Data visualisation library  
+
+`leaflet` - Open Street Map support  
+
+`leaflet-markercluster` - Map markers and clustering support  
+
+`dc.leaflet` - Integrates dc-js and leaflet for interactive maps  
+
+`moment.js` - Library to handle dates, times and all funky formats they come in.
+
+You can find how these libraries are included in CodePen by clicking the settings button and clicking `JS`.
+As many of the libraries also have associated visual style elements, we also have to include their own stylesheets. These can be found under the `CSS` section of settings in CodePen.
+
+## Pens
+#### Step 1 https://codepen.io/jargonaut/pen/BaLWJBL
+
+#### Step 2 https://codepen.io/jargonaut/pen/mdrRNEr
+
+#### Step 3 https://codepen.io/jargonaut/pen/PoGpQwQ
+
+#### Step 4 https://codepen.io/jargonaut/pen/vYXxWwB
+
+#### Step 5 https://codepen.io/jargonaut/pen/vYXxWwB
+
+## Sample as web page
+link to go here
+
+
+

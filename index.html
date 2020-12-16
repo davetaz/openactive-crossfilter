@@ -3,74 +3,75 @@
 <head>
 	<title>Data crossfilter</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	
+
 	<link rel="stylesheet" href="style.css"/>
-
 	<link rel="stylesheet" href="node_modules/dc/dc.css"/>
-
 	<link rel="stylesheet" href="node_modules/jquery-ui-dist/jquery-ui.min.css">
-
 	<link type="text/css" href="node_modules/dc.leaflet/web/css/leaflet.css" rel="stylesheet"/>
 	<link type="text/css" href="node_modules/dc.leaflet/web/css/MarkerCluster.Default.css" rel="stylesheet"/>
 	<link type="text/css" href="node_modules/dc.leaflet/web/css/MarkerCluster.css" rel="stylesheet"/>
-
-	<script src="node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="node_modules/d3/build/d3.js"></script>
-	<script src="node_modules/crossfilter2/crossfilter.js"></script>
-	<script src="node_modules/dc/dc.js"></script>
-
-	<script src="node_modules/leaflet/dist/leaflet.js"></script>
-	<script src="node_modules/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
-	<script src="node_modules/dc.leaflet/dc.leaflet.js"></script>
-	
-	<script src="node_modules/moment/moment.js"></script>
-	<script src="node_modules/jquery-ui-dist/jquery-ui.min.js"></script> 
-
-	<script src="js/crossfilter.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.3.1/d3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dc/4.2.3/dc.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter2/1.5.2/crossfilter.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+	<script src="https://dc-js.github.io/dc.leaflet.js/js/leaflet.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://dc-js.github.io/dc.leaflet.js/js/dc.leaflet.js"></script>
+	<script src="js/pen.js"></script>
 	<script src="js/helpers.js"></script>
 </head>
+	<body>
 
-<body>
+	  <panel id="first">
+	    <div id='searchArea'>
+	      <h2>Search</h2>
+	      <p>Search for activity, category, location etc.</p>
+	      <div id='search'>
+	        <p class='label'>#search</p>
+	      </div>
+	    </div>
+	    <div id='activityArea'>
+	      <h2>Activity Type</h2>
+	      <div id='activityChart'>
+	        <p class='label'>#activityChart</p>
+	      </div>
+	    </div>
+	  </panel>
 
-<panel id="first">
-	<div id='searchArea'>
-		<h2>Search</h2>
-		<p>Search for activity, category, location etc.</p>
-		<div id='search'></div>
-	</div>
-	<div id='activityArea'>
-		<h2>Activity Type</h2>
-		<div id='activityChart'></div>
-	</div>
-</panel>
+	  <panel id="second">
+	    <div id='costArea'>
+	      <h2>Price</h2>
+	      <span id="costLow" value="0">£0.00</span> - <span id="costHigh" value="0">£0.00</span><br />
+	      <div id="costSlider" class="doubleSlider">
+	        <p class='label'>#costSlider</p>
+	      </div>
+	    </div>
+	    <div id="costChart" class="doubleSlider">
+	      <p class='label'>#costChart</p>
+	    </div>
+	    </div>
+	    <div id="dayOfWeekArea">
+	      <h2>Day of Week</h2>
+	      <div id='dayOfWeekChart'>
+	        <p class='label'>#dayOfWeekChart</p>
+	      </div>
+	    </div>
+	  </panel>
 
-<panel id="second">
-	<div id='costArea'>
-		<h2>Price</h2>
-		<span id="costLow" value="0">£0.00</span> - <span id="costHigh" value="0">£0.00</span><br/>
-		<div id="costSlider" class="doubleSlider"></div>
-	</div>
-	<div id='durationArea'>
-		<h2>Duration</h2>
-		<span id="durationLow" value="0">00:00</span> - <span id="durationHigh" value="0">12:00</span><br/>
-		<div id="durationSlider" class="doubleSlider"></div>
-	</div>
-	<div id='startTimeArea'>
-		<h2>Start Time</h2>
-		<span id="startTimeLow" value="0">00:00</span> - <span id="startTimeHigh" value="0">23:59</span><br/>
-		<div id="startTimeSlider" class="doubleSlider"></div>
-	</div>
-	<div id="dayOfWeekArea">
-		<h2>Day of Week</h2>
-		<div id='dayOfWeekChart'></div>
-	</div>
-</panel>
+	  <panel id="third">
+	    <h2>Location</h2>
+	    <div id='map'>
+	      <p class='label'>#map</p>
+	    </div>
+	  </panel>
 
-<panel id="third">
-	<div id='map'></div>
-</panel>
+	  <div id="dc-data-grid">
+	    <p class='label'>#dc-data-grid</p>
+	  </div>
 
-<div id="dc-data-grid"></div>
-
-</body>
+	</body>
 </html>

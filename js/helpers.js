@@ -1,7 +1,7 @@
 //Create a strong formatter
 var currency = d3.format('.2f');
 
-//Process and tidy the data. Also create new data points as required. 
+//Process and tidy the data. Also create new data points as required.
 //All preprocessing should be done here (or in the harvester)
 function preprocess(items) {
 	output = [];
@@ -80,7 +80,7 @@ function reduceRemoveCategories(p, v) {
 }
 
 function reduceInitial() {
-  return {};  
+  return {};
 }
 
 function fillDays(events) {
@@ -88,7 +88,7 @@ function fillDays(events) {
 	events.forEach (function(val,idx) {
 		start = val.startDate;
 		formatted = moment(start).format("dddd");
-		ret.push('http://schema.org/' + formatted);
+		ret.push(formatted);
 	});
 	return ret;
 }
