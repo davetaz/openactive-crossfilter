@@ -6,7 +6,9 @@
 
 Boiler plate HTML, Javascript and CSS already built!
 
-Check out https://codepen.io/jargonaut/pen/BaLWJBL
+Check out 
+[https://codepen.io/jargonaut/pen/BaLWJBL
+](https://codepen.io/jargonaut/pen/vYXxWwB)
 
 # Step 1
 In this step we will look at how to interrogate the data and extract what we need to populate some simple information cards in a grid layout.
@@ -43,6 +45,7 @@ Everything inside quotes is what gets output, so to include a value from our dat
 Try appending the session description inside paragraph `p` tags so it displays under the session name.
 
 ---
+
 
 ## Step 2 - Display details for more than one session
 
@@ -466,18 +469,24 @@ You can find how these libraries are included in CodePen by clicking the setting
 As many of the libraries also have associated visual style elements, we also have to include their own stylesheets. These can be found under the `CSS` section of settings in CodePen.
 
 ## Pens
-#### Step 1 https://codepen.io/jargonaut/pen/BaLWJBL
-
-#### Step 2 https://codepen.io/jargonaut/pen/mdrRNEr
-
-#### Step 3 https://codepen.io/jargonaut/pen/PoGpQwQ
-
-#### Step 4 https://codepen.io/jargonaut/pen/vYXxWwB
-
-#### Step 5 https://codepen.io/jargonaut/pen/vYXxWwB
-
-## Sample as web page
-link to go here
+#### Step 1 
+[https://codepen.io/jargonaut/pen/BaLWJBL
+](https://codepen.io/jargonaut/pen/vYXxWwB)
+#### Step 2 
+[https://codepen.io/jargonaut/pen/mdrRNEr
+](https://codepen.io/jargonaut/pen/vYXxWwB)
+#### Step 3 
+[https://codepen.io/jargonaut/pen/PoGpQwQ
+](https://codepen.io/jargonaut/pen/vYXxWwB)
+#### Step 4 
+[https://codepen.io/jargonaut/pen/vYXxWwB
+](https://codepen.io/jargonaut/pen/vYXxWwB)
+#### Step 5 
+[https://codepen.io/jargonaut/pen/vYXxWwB
+](https://codepen.io/jargonaut/pen/vYXxWwB)
+#### Final version 
+[https://codepen.io/jargonaut/pen/vYXxWwB
+](https://codepen.io/jargonaut/pen/vYXxWwB)
 
 
 
