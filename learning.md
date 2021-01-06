@@ -4,7 +4,32 @@
 
 Boiler plate HTML, Javascript and CSS already built! We'll be using Codepen for this exercise. To get started, check out
 [https://codepen.io/jargonaut/pen/BaLWJBL
-](https://codepen.io/jargonaut/pen/BaLWJBL)
+](https://codepen.io/jargonaut/pen/BaLWJBL).
+
+If you're already familar with Codepen, feel free to go straight to Step 1. But if you haven't used it before, here's how you get started.  
+
+### Open the link
+This will take you to the example we've created for you. This is referred to as a 'pen'.
+
+### Create a CodePen account and fork a copy of the example
+Use the `Fork` button at the bottom right of the page; this creates an exact copy of the pen that you can then make changes to.
+
+### Get familiar with the workspace
+  
+![](codepen1.png)  
+
+You'll see four main sections: three for code, and one for the output.  
+
+* The HTML section contains the code that builds the web page - page elements, sections, navigation and content blocks.  
+*  The CSS section is where your style instructions go, things like which fonts to use, colours for different elements, and the way different parts behave in relation to each other.  
+*  Finally the JS (Javascript) section is where you put the code that creates dynamic content - complex functions, data wrangling and calculations.
+
+As you edit the code you will see the final section, the output, change in response. By default a pen is set up to refresh automatically as soon as a change is made, but you can explore the settings and change that option if you prefer to refresh manually.
+
+### Make a start!
+Now you have your own account and a copy of the example pen to work with, it's time to get started on the exercise.
+
+
 
 # Step 1 - getting elements of the dataset
 In this step we will look at how to interrogate the data and extract what we need to populate some simple information cards in a grid layout.
