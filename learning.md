@@ -127,7 +127,7 @@ This line sets up the dataGrid object as a `dc.dataGrid` and tells it that the g
 
 At this point your output will change; your list will disappear, and you may see messages telling you that you need to provide an html() handling param. This is the content of the datagrid.
 
-Let's define the content. Add the following line:
+Let's define the content. Add the following lines:
 
     dataGrid
         .html(function(session) {
@@ -136,7 +136,9 @@ Let's define the content. Add the following line:
 
 >**Note:** Here we are not appending, but rather returning a set of things to display for each session in one long line. Some extra tags have been added for style.
 
-Finally, add these lines under `dataGrid`:  
+Finally, add these lines under `dataGrid`:
+
+>**Note:** You will also need to remove the semi-colon `;` from this end of the code you added above before adding the next lines. A semi-colon `;` in javascript represents the end of a command or block/line of code.
 
       .dimension(activity)
       .section(function(item) {
