@@ -157,18 +157,13 @@ These lines do three things:
 
 ### Test what you've learned
 
-Try adding another detail to your dataGrid: the price range that people might need to pay for each session.
+Try adding another detail to your dataGrid: the price range that people might need to pay for each session. The OpenActive crossfilter helper library has a function called `getPriceRange()`. To use it, you pass in the `offers` data from each item in your `sessions` data object, like this:  
+
+	getPriceRange(session.data.offers)  
+
+Using the HTML opening and closing tags and '+' as before, see if you can make this display under your session name and details in the data grid. 
 
 ---
->**Hint:** The OpenActive crossfilter helper library has a function called `getPriceRange()`  
-Inside the brackets you give it the `offers` related to a session, and it returns the price ranges of that session from low to high.
-
----
-Use the HTML and Javascript from above to populate your dataGrid with all three items:
-
-* title,
-* description,
-* price range.
 
 ### Create the activity row chart
 
