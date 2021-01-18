@@ -70,8 +70,6 @@ Try appending the session description inside paragraph `p` tags so it displays u
 
 ---
 
-![](codepen2.png)
-
 ## Step 2 - Display details for more than one session
 
 In this stage we are going to build an iterator. This is a piece of code that loops through every session in the dataset and displays the name and description for each one.
@@ -100,8 +98,6 @@ The finished code block should look something like this:
     });
 
 >**Note:** To make code more human-readable it's a good convention to start a new line after every opening `{` and indent each line that follows (using tab or similar) prior to the closing `}`.
-  
-![](codepen3.png)
 
 ## Step 3 - Starting to build the cross filter.
 [https://skyscanner.net](https://skyscanner.net) is a great example of a crossfilter. We are going to make something very similar, but for sessions rather than flights. We will use the list of sessions we built in Step 2 to create our filters.
@@ -249,7 +245,6 @@ Can you change the cost line chart into a bar chart instead?
 >The dc.js documentation describes how to create different chart types.
 
 ---
-![](codepen4.png)
 
 ## Step 4 - improving the user interface
 
@@ -355,7 +350,6 @@ Your crossfilter is starting to get more complex now, with labels and sections l
 * Look for other code that's no longer being used. You can decide to keep it if you might want to use it later, or to delete it if you're sure you won't need it.
 
 ---
-![](codepen5.png)
 
 ## Step 5 - Add a map
 
