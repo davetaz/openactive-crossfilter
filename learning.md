@@ -2,16 +2,19 @@
 
 ## Requirements
 
-Boiler plate HTML, Javascript and CSS already built! We'll be using Codepen for this exercise. To get started, check out
+We'll be using Codepen for this exercise. To get started, check out
 [https://codepen.io/jargonaut/pen/BaLWJBL
-](https://codepen.io/jargonaut/pen/BaLWJBL).
+](https://codepen.io/jargonaut/pen/BaLWJBL). We've already built the boilerplate HTML, Javascript and CSS to get you started.
 
 If you're already familar with Codepen, feel free to go straight to Step 1. But if you haven't used it before, here's how you get started.  
 
 ### Open the link
-This will take you to the example we've created for you. This is referred to as a 'pen'.
+This will take you to the example we've created for you. This is referred to as a 'pen'. Take a few minutes to read through the code and see if you can work out from the comments what we're trying to do in each section.
 
-### Create a CodePen account and fork a copy of the example
+### Create a CodePen account
+This means that any work you do can be saved to your own account.
+
+### Fork a copy of the example
 Use the `Fork` button at the bottom right of the page; this creates an exact copy of the pen that you can then make changes to.
 
 ### Get familiar with the workspace
@@ -22,7 +25,7 @@ You'll see four main sections: three for code, and one for the output.
 
 * The HTML section contains the code that builds the web page - page elements, sections, navigation and content blocks.  
 *  The CSS section is where your style instructions go, things like which fonts to use, colours for different elements, and the way different parts behave in relation to each other.  
-*  Finally the JS (Javascript) section is where you put the code that creates dynamic content - complex functions, data wrangling and calculations.
+*  Finally the JS (Javascript) section is where you put the code that creates dynamic content - complex functions, data wrangling and calculations. This is the only section you will need to edit (aside from a single small change to the CSS in Step 3) so you can resize or hide the others for now to give you more room to work.
 
 As you edit the code you will see the final section, the output, change in response. By default a pen is set up to refresh automatically as soon as a change is made, but you can explore the settings and change that option if you prefer to refresh manually.
 
@@ -67,6 +70,8 @@ Try appending the session description inside paragraph `p` tags so it displays u
 
 ---
 
+![](codepen2.png)
+
 ## Step 2 - Display details for more than one session
 
 In this stage we are going to build an iterator. This is a piece of code that loops through every session in the dataset and displays the name and description for each one.
@@ -95,6 +100,8 @@ The finished code block should look something like this:
     });
 
 >**Note:** To make code more human-readable it's a good convention to start a new line after every opening `{` and indent each line that follows (using tab or similar) prior to the closing `}`.
+  
+![](codepen3.png)
 
 ## Step 3 - Starting to build the cross filter.
 [https://skyscanner.net](https://skyscanner.net) is a great example of a crossfilter. We are going to make something very similar, but for sessions rather than flights. We will use the list of sessions we built in Step 2 to create our filters.
@@ -242,6 +249,7 @@ Can you change the cost line chart into a bar chart instead?
 >The dc.js documentation describes how to create different chart types.
 
 ---
+![](codepen4.png)
 
 ## Step 4 - improving the user interface
 
@@ -347,6 +355,7 @@ Your crossfilter is starting to get more complex now, with labels and sections l
 * Look for other code that's no longer being used. You can decide to keep it if you might want to use it later, or to delete it if you're sure you won't need it.
 
 ---
+![](codepen5.png)
 
 ## Step 5 - Add a map
 
@@ -433,9 +442,9 @@ Try adding the full address to the tooltip.
 ---
 
 ## Finished!
-TODO add some notes about playing with styles, labelling options etc
+The finished crossfilter should look something like this:
 
----
+![](codepenfinal.png) 
 
 # References
 
@@ -465,23 +474,3 @@ Here's the list of all the code libraries we're using to build the crossfilter. 
 
 You can find how these libraries are included in CodePen by clicking the settings button and clicking `JS`.
 As many of the libraries also have associated visual style elements, we also have to include their own stylesheets. These can be found under the `CSS` section of settings in CodePen.
-
-### Pens
-#### Step 1
-[https://codepen.io/jargonaut/pen/BaLWJBL
-](https://codepen.io/jargonaut/pen/vYXxWwB)
-#### Step 2
-[https://codepen.io/jargonaut/pen/mdrRNEr
-](https://codepen.io/jargonaut/pen/vYXxWwB)
-#### Step 3
-[https://codepen.io/jargonaut/pen/PoGpQwQ
-](https://codepen.io/jargonaut/pen/vYXxWwB)
-#### Step 4
-[https://codepen.io/jargonaut/pen/BaLWVpP
-](https://codepen.io/jargonaut/pen/BaLWVpP)
-#### Step 5
-[https://codepen.io/jargonaut/pen/vYXxWwB
-](https://codepen.io/jargonaut/pen/vYXxWwB)
-#### Final version with some added styling
-[https://codepen.io/jargonaut/pen/vYXxWwB
-](https://codepen.io/jargonaut/pen/vYXxWwB)
