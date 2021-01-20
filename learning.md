@@ -114,6 +114,7 @@ The finished code block should look something like this:
 >**Note:** To make code more human-readable it's a good convention to start a new line after every opening `{` and indent each line that follows (using tab or similar) prior to the closing `}`.
 
 ## Step 3 - Starting to build the cross filter.
+
 [https://skyscanner.net](https://skyscanner.net) is a great example of a crossfilter. We are going to make something very similar, but for sessions rather than flights. We will use the list of sessions we built in Step 2 to create our filters.
 
 ### Make a list of sessions for our filter
@@ -147,25 +148,20 @@ At this point your output will change; your list will disappear, and you may see
 Let's define the content. Add the following line:
 
     dataGrid
-        .html(function(session) {
+        .dimension(activity)
+	.html(function(session) {
             return '<item>' + '<h1>' + session.data.name + '</h1>' + '<p>' + session.data.description + '</p>' + '</item>';
-        });
+        })
+        .section(function(session) {
+          return item.id;
+        })
+        .size(1000);
 
->**Note:** Here we are not appending, but rather returning a set of things to display for each session in one long line. Some extra tags have been added for style.
-
-Finally, add these lines under `dataGrid`:  
-
-      .dimension(activity)
-      .section(function(item) {
-        return item.id;
-      })
-      .size(1000);
-
-These lines do three things:  
-
-* set up the dataGrid to depend on activityName as a key variable,  
-* give each item in the grid an ID,  
-* limit the number of displayed items on the screen to 1000.
+These lines do the following:
+* .dimension - Which object to itterate on in the crossfilter (in this case we've called it activities)
+* .html - Similar to the part inf Step 2, these display session information on the screen for each item
+* .section - give each session in the grid an ID,  
+* .size - limit the number of displayed items on the screen to 1000.
 
 ---
 
@@ -179,7 +175,7 @@ Using the HTML opening and closing tags and '+' as before, see if you can make t
 
 ---
 
-### Create the activity row chart
+## Step 4 - Create the activity row chart and complete the cross filter
 
 Now we need to create a way to filter the dataGrid, in this case a rowChart of activity types. First we need to reveal the hidden structure on our page where the filters are going to be.
 
@@ -220,6 +216,8 @@ This should display a rowChart of activityTypes on the screen which you can then
 > There are many types of charts and grids in the dc-js crossfilter library. It can be difficult to get started sometimes, as the documentation doesn't always make it clear what the minimal configuration is to make a chart display. Now you have a basic chart showing up, you can check out the different options and configurations for your rowChart at [http://dc-js.github.io/dc.js/docs/html/](http://dc-js.github.io/dc.js/docs/html/).
 >
 
+## Step 5 - Add another way of filtering
+
 Now for a basic line chart. Let's get the session cost (price) for each activity and use it to make another facet on our crossfilter.
 
 Add the following lines underneath the code for your activity rowChart:
@@ -244,18 +242,22 @@ Add the following lines underneath the code for your activity rowChart:
         return 20;
       });
 
-You should now see a line chart showing the activity cost by number of sessions appearing under the `#costChart` label. It may be a little messy since we haven't done anything with the styling yet, but we can see it working. If you click on any row in the activity chart you should see the cost chart change as the data is filtered.
+You should now see a line chart showing the activity cost by number of sessions appearing under the `#costChart` label. It may be a little messy since we haven't done anything with the styling yet, but we can see it working. 
+
+If you click on any row in the activity chart you should see the cost chart change as the data is filtered.
+
+You can also highlight ranges of price on the line chart to filter the other aspects.
 
 ---
 ### Test what you've learned
 
 Can you change the cost line chart into a bar chart instead?
 >**Hint:**
->The dc.js documentation describes how to create different chart types.
+>The dc.js documentation describes how to create different chart types (or you can just find where we have defined it as a lineChart and change this to barChart)
 
 ---
 
-## Step 4 - improving the user interface
+## Step 6 - improving the user interface
 
 We have a working crossfilter, but now we need to add a few more elements to make it easier to use.
 
@@ -269,7 +271,7 @@ as these are the free text fields that are most likely to contain the sort of ke
 
 Find the line that reads
 
-    //STEP 4 CODE GOES HERE
+    //STEP 6 CODE GOES HERE
 
 and add the following lines of code.
 
@@ -297,7 +299,7 @@ Can you work out how to include them?
 
 ---
 
-### Create a slider control
+## Step 7 - Create a slider control
 At the moment our crossfilter is showing `cost` as a line chart. It works, but it isn't the most intuitive thing to use as a filter!  Luckily the libraries we are using include another object, the slider, that is commonly used as a filtering element on interactive dashboards. Let's take a look at how we build one.  
 
 We already have costs data, currently feeding into a chart. What we need to do is take that data and pass it to the slider function. This is a little more complex than the charts you've created so far, so you can use the following as a template.  
@@ -360,7 +362,7 @@ Your crossfilter is starting to get more complex now, with labels and sections l
 
 ---
 
-## Step 5 - Add a map
+## Step 8 - Add a map
 
 Our sample data includes information where activities are happening, so let's add a map with selectable markers.
 
@@ -387,7 +389,7 @@ Each activity has a section called `location` which includes place names, addres
                     }
                 },
 
-Latitude and longitude coordinates are what we'll use to place markers on our map, so let's extract those first. Add the following code blocks under the line `// STEP 5 CODE GOES HERE`.
+Latitude and longitude coordinates are what we'll use to place markers on our map, so let's extract those first. Add the following code blocks under the line `// STEP 7 CODE GOES HERE`.
 
     var locations = {};
 
