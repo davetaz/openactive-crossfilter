@@ -70,7 +70,17 @@ Try appending the session description inside paragraph `p` tags so it displays u
 
 ---
 
-<span style="color:blue">some *blue* text</span>.
+---
+
+### HELP: It doesn't work
+
+If you get stuck at any time, you might need to look at the debugger which can give you clues as to what is not correct.
+
+You can view this by clicking the "Console" button at the bottom left corner of codePen.
+
+You might get useful messages like, missing quote (did you close all open quotes?), unexpected quote (did you have all the plus signs?), or missing or unexpected brackets (are they all in the right place and in the right order?).
+
+---
 
 ## Step 2 - Display details for more than one session
 
