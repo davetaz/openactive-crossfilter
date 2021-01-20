@@ -393,7 +393,7 @@ Each activity has a section called `location` which includes place names, addres
                     }
                 },
 
-Latitude and longitude coordinates are what we'll use to place markers on our map, so let's extract those first. Add the following code blocks under the line `// STEP 7 CODE GOES HERE`.
+Latitude and longitude coordinates are what we'll use to place markers on our map, so let's extract those first. Add the following code blocks under the line `// STEP 8 CODE GOES HERE`.
 
     var locations = {};
 
