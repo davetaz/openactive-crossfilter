@@ -1,6 +1,6 @@
 # Building a cross-filter to find sporting activities in England (demo)
 
-Here is what we are going to build, expect interactive.
+Here is what we are going to build, but the one you will build will be interactive.
 
 ![](codepenfinal2.png) 
 
