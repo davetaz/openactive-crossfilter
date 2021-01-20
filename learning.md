@@ -70,6 +70,8 @@ Try appending the session description inside paragraph `p` tags so it displays u
 
 ---
 
+<span style="color:blue">some *blue* text</span>.
+
 ## Step 2 - Display details for more than one session
 
 In this stage we are going to build an iterator. This is a piece of code that loops through every session in the dataset and displays the name and description for each one.
