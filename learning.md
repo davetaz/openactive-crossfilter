@@ -15,7 +15,7 @@ This will take you to the example we've created for you. This is referred to as 
 This means that any work you do can be saved to your own account.
 
 ### Fork a copy of the example
-Use the `Fork` button at the bottom right of the page; this creates an exact copy of the pen that you can then make changes to.
+Use the `Fork` button at the bottom right of the page (or use CTLR+S on your keyboard); this creates an exact copy of the pen that you can then make changes to.
 
 ### Get familiar with the workspace
   
