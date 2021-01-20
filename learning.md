@@ -1,10 +1,14 @@
 # Building a cross-filter to find sporting activities in England (demo)
 
+Here is what we are going to build, expect interactive.
+
+![](codepenfinal2.png) 
+
 ## Requirements
 
 We'll be using Codepen for this exercise. To get started, check out
-[https://codepen.io/jargonaut/pen/BaLWJBL
-](https://codepen.io/jargonaut/pen/BaLWJBL). We've already built the boilerplate HTML, Javascript and CSS to get you started.
+[https://codepen.io/davetaz/pen/ExgMMJG
+](https://codepen.io/davetaz/pen/ExgMMJG). We've already built the boilerplate HTML, Javascript and CSS to get you started.
 
 If you're already familar with Codepen, feel free to go straight to Step 1. But if you haven't used it before, here's how you get started.  
 
