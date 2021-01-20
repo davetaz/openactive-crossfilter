@@ -1,4 +1,4 @@
-# Steps to learn how to build the cross filter
+# Building a cross-filter to find sporting activities in England (demo)
 
 ## Requirements
 
