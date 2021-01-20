@@ -80,6 +80,8 @@ You can view this by clicking the "Console" button at the bottom left corner of 
 
 You might get useful messages like, missing quote (did you close all open quotes?), unexpected quote (did you have all the plus signs?), or missing or unexpected brackets (are they all in the right place and in the right order?).
 
+Note: The very last part of the error message (after the colon ":") will tell you what line of code the error is on. e.g. "at https://...../.../...:43" would be line 43.
+
 ---
 
 ## Step 2 - Display details for more than one session
