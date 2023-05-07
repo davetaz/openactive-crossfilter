@@ -30,6 +30,6 @@
 		"leaflet.markercluster": "^1.4.1",
 		"local-web-server": "^3.0.7",
 		"moment": "^2.29.1",
-		"npm": "^6.14.9"
+		"npm": "^6.14.18"
 	}
 }
